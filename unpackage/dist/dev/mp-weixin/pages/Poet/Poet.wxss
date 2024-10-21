@@ -1,0 +1,157 @@
+
+	/* 设置背景颜色 */
+.bg-set.data-v-72996608{
+	    position: fixed;
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    background-color: #f5f5f5;
+	    z-index: -1;
+}
+.activite.data-v-72996608 {
+		color: #0a9a8d;
+		font-weight: 700;
+		border-bottom: 2px solid #0a9a8d;
+}
+.content.data-v-72996608 {
+		/* background: #008000; */
+		/* height: 300px; */
+}
+.scroll-view_H.data-v-72996608 {
+		white-space: nowrap;
+		width: 100%;
+		color: #CCCCCC;
+}
+.scroll-view-item_H.data-v-72996608 {
+		display: inline-block;
+		width: 10%;
+		height: 50rpx;
+		line-height: 50rpx;
+		text-align: center;
+}
+.scroll-view-item_H.data-v-72996608:first-child {
+		margin-left: 37.5%;
+		margin-right: 5%;
+}
+
+	/* 搜索样式 */
+.search-bar.data-v-72996608 {
+	    display: flex;
+	    flex-direction: row;
+	    padding: 10px;
+		margin-bottom: -10px;
+}
+.search-bar input.data-v-72996608 {
+	    flex: 1; 
+	    border: 1px solid #ccc;
+	    padding: 5px;
+	    border-radius: 5px;
+}
+.search-bar button.data-v-72996608 {
+		font-size: 14px;
+	    margin-left: 10px;
+}
+	/* 搜索样式结束 */
+	/* 下拉栏开始 */
+
+	/* 下拉栏结束 */
+.poet-head.data-v-72996608 {
+		height: 16%;
+		width: 100%;
+		border-color: red;
+}
+label.data-v-72996608 {
+		flex: 1;
+		font-size: 32rpx;
+}
+checkbox-group.data-v-72996608 {
+		display: flex;
+}
+checkbox.data-v-72996608 {
+		transform: scale(0.7);
+}
+	
+	/* poet-body */
+.container.data-v-72996608 {
+		display: flex;
+}
+.card.data-v-72996608 {
+		flex: 1;
+		margin: 20rpx 12rpx;
+		padding: 10rpx;
+/* 		height: 300rpx; */
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+}
+.poet-name.data-v-72996608 {
+		font-size: 14px;
+		font-weight: bold;
+}
+.card-divider.data-v-72996608 {
+		height: 1px;
+		background-color: #ccc;
+		margin: 5px 0;
+}
+.poet-bd.data-v-72996608 {
+		color: #666;
+		font-size: 12px;
+}
+.intro.data-v-72996608 {
+		width: 100%;
+	    /* 超过了就隐藏 */
+	    overflow: hidden;
+		/* 超过了就显示省略号 */
+	    text-overflow: ellipsis;
+		/* webkit内核的浏览器 */
+	    display: -webkit-box;
+	    -webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		color: #666;
+		font-size: 12px;
+}
+.card-actions.data-v-72996608 {
+		font-size: 14px;
+		margin-top: 6rpx;
+		text-align: right;
+}
+.poem-name.data-v-72996608 {
+		font-size: 14px;
+		font-weight: bold;
+}
+.poem-genre.data-v-72996608 {
+		color: #666;
+		font-size: 12px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+}
+.poem-content.data-v-72996608 {
+		width: 100%;
+		color: #666;
+		font-size: 12px;
+}
+	
+	/* 按钮样式 */
+.BtnContainer.data-v-72996608 {
+		margin: 0 auto;
+		width: 50%;
+		display: flex;
+		padding-bottom: 10px;
+}
+.PrevBtn.data-v-72996608 {
+		flex:1;
+		margin-left: 12rpx;
+		margin-right: 50px;
+		font-size: 12px;
+		background-color: #fff;
+}
+.NextBtn.data-v-72996608 {
+		margin-right: 12rpx;
+		flex: 1;
+		font-size: 12px;
+		background-color: #fff;
+}
+.uni-select.data-v-72996608 {
+		background-color: #fff
+}

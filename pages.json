@@ -1,0 +1,113 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path":"pages/Poet/Poet",
+			"style": {
+				"navigationBarTitleText": "诗词数据"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	    ,{
+            "path" : "pages/AI/AI",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "AI检索",
+                "enablePullDownRefresh": false,
+				"backgroundColor": "#232323"
+            }   
+        }
+        ,{
+            "path" : "pages/My/My",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "数据挖掘",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/userinfo/userinfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/PoetInfo/PoetInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/DM/DM",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Text/Text",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	// test
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/Poet/Poet",
+				"text": "诗词数据",
+				"iconPath": "static/tabs/tab1.png",
+				"selectedIconPath": "static/tabs/Stab1.png"
+			},
+			{
+				"pagePath": "pages/AI/AI",
+				"text": "AI检索",
+				"iconPath": "static/tabs/AI.png",
+				"selectedIconPath": "static/tabs/SAI.png"
+			},
+			{
+				"pagePath": "pages/DM/DM",
+				"text": "数据挖掘",
+				"iconPath": "static/tabs/DM.png",
+				"selectedIconPath": "static/tabs/SDM.png"
+			},
+			{
+				"pagePath": "pages/My/My",
+				"text": "我的",
+				"iconPath": "static/tabs/My.png",
+				"selectedIconPath": "static/tabs/SMy.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

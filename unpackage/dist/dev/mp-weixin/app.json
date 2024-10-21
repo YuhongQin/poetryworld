@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/Poet/Poet",
+    "pages/index/index",
+    "pages/AI/AI",
+    "pages/My/My",
+    "pages/userinfo/userinfo",
+    "pages/PoetInfo/PoetInfo",
+    "pages/DM/DM",
+    "pages/Text/Text"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Poet/Poet",
+        "text": "诗词数据",
+        "iconPath": "static/tabs/tab1.png",
+        "selectedIconPath": "static/tabs/Stab1.png"
+      },
+      {
+        "pagePath": "pages/AI/AI",
+        "text": "AI检索",
+        "iconPath": "static/tabs/AI.png",
+        "selectedIconPath": "static/tabs/SAI.png"
+      },
+      {
+        "pagePath": "pages/DM/DM",
+        "text": "数据挖掘",
+        "iconPath": "static/tabs/DM.png",
+        "selectedIconPath": "static/tabs/SDM.png"
+      },
+      {
+        "pagePath": "pages/My/My",
+        "text": "我的",
+        "iconPath": "static/tabs/My.png",
+        "selectedIconPath": "static/tabs/SMy.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

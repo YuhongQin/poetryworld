@@ -1,0 +1,6 @@
+/* 水平间距 */
+/* 水平间距 */
+.PoetInfoContainer {
+  width: 100%;
+  margin-bottom: 50px;
+}
