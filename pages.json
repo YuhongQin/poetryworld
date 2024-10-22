@@ -73,6 +73,15 @@
             }
             
         },
+		{
+		    "path" : "pages/translate/translate",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
         {
         	"path" : "pages/knowledge/poetry/poetry",
         	"style" : 

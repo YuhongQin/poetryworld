@@ -1,79 +1,79 @@
 {
-  "hash": "40de35a9",
-  "configHash": "c62e26b0",
+  "hash": "2cf620f7",
+  "configHash": "abc01f7b",
   "lockfileHash": "ff969536",
-  "browserHash": "4dd95968",
+  "browserHash": "069c27bf",
   "optimized": {
     "echarts/lib/chart/line": {
       "src": "../../../../../node_modules/echarts/lib/chart/line.js",
       "file": "echarts_lib_chart_line.js",
-      "fileHash": "6471510d",
+      "fileHash": "1c433a2d",
       "needsInterop": false
     },
     "echarts/lib/component/title": {
       "src": "../../../../../node_modules/echarts/lib/component/title.js",
       "file": "echarts_lib_component_title.js",
-      "fileHash": "9fdea278",
+      "fileHash": "787d85f7",
       "needsInterop": false
     },
     "echarts/lib/component/tooltip": {
       "src": "../../../../../node_modules/echarts/lib/component/tooltip.js",
       "file": "echarts_lib_component_tooltip.js",
-      "fileHash": "d9a125ee",
+      "fileHash": "b96dd6d2",
       "needsInterop": false
     },
     "vue-echarts": {
       "src": "../../../../../node_modules/vue-echarts/dist/index.js",
       "file": "vue-echarts.js",
-      "fileHash": "096fb7ff",
+      "fileHash": "2536382e",
       "needsInterop": false
     },
     "js-cookie": {
       "src": "../../../../../node_modules/js-cookie/dist/js.cookie.mjs",
       "file": "js-cookie.js",
-      "fileHash": "b3b87a81",
+      "fileHash": "86dc6eb5",
       "needsInterop": false
     },
     "echarts-wordcloud": {
       "src": "../../../../../node_modules/echarts-wordcloud/index.js",
       "file": "echarts-wordcloud.js",
-      "fileHash": "0cb5033a",
+      "fileHash": "51305bf0",
       "needsInterop": false
     },
     "echarts": {
       "src": "../../../../../node_modules/echarts/index.js",
       "file": "echarts.js",
-      "fileHash": "288e702a",
+      "fileHash": "7195230f",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-6HEWPMBO": {
-      "file": "chunk-6HEWPMBO.js"
+    "chunk-HZRHYTT2": {
+      "file": "chunk-HZRHYTT2.js"
     },
-    "chunk-JVAXSKJZ": {
-      "file": "chunk-JVAXSKJZ.js"
+    "chunk-U6TMG54K": {
+      "file": "chunk-U6TMG54K.js"
     },
-    "chunk-JDAIIIWS": {
-      "file": "chunk-JDAIIIWS.js"
+    "chunk-EBWXBOEB": {
+      "file": "chunk-EBWXBOEB.js"
     },
-    "chunk-GJNHW5C6": {
-      "file": "chunk-GJNHW5C6.js"
+    "chunk-UWGNOK5X": {
+      "file": "chunk-UWGNOK5X.js"
     },
-    "chunk-JLJD5O5Q": {
-      "file": "chunk-JLJD5O5Q.js"
+    "chunk-DJHXIVHW": {
+      "file": "chunk-DJHXIVHW.js"
     },
-    "chunk-3VERVHA4": {
-      "file": "chunk-3VERVHA4.js"
+    "chunk-NURO7GMT": {
+      "file": "chunk-NURO7GMT.js"
     },
-    "chunk-6CC5ZG44": {
-      "file": "chunk-6CC5ZG44.js"
+    "chunk-ZUGBGGFC": {
+      "file": "chunk-ZUGBGGFC.js"
     },
-    "chunk-OCIHAXV5": {
-      "file": "chunk-OCIHAXV5.js"
+    "chunk-GO2JNPCO": {
+      "file": "chunk-GO2JNPCO.js"
     },
-    "chunk-QINJRSWT": {
-      "file": "chunk-QINJRSWT.js"
+    "chunk-RRA2ZF5S": {
+      "file": "chunk-RRA2ZF5S.js"
     },
     "chunk-F5QR3K72": {
       "file": "chunk-F5QR3K72.js"
