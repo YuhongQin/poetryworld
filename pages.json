@@ -72,6 +72,20 @@
                 "enablePullDownRefresh": false
             }
             
+        },
+        {
+        	"path" : "pages/knowledge/poetry/poetry",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "components/word/word",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
         }
     ],
 	"globalStyle": {
