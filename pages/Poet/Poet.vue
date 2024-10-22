@@ -1,7 +1,6 @@
 <template>
 	<!-- 所有内容开始 -->
 	<view class="bg-set">
-		<view class="bg-set"></view>
 		<!-- tab切换开始 -->
 		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll">
 			<view class="scroll-view-item_H" v-for="(tab,index) in tabBars" :key="tab.id" :id="tab.id"
@@ -16,9 +15,9 @@
 			<view class="poet-head">	
 				
 			<uni-search-bar 
-			@confirm="getPoetData" 
+			bgColor="white" @confirm="getPoetData" 
 			:focus="true" v-model="searchValuePoet"
-				@cancel="onCancelPoetSearch" @clear="onClearPoetSearch">
+				@cancel="onCancelPoetSearch" @clear="onClearPoetSearch" placeholder="请输入诗人名称">
 			</uni-search-bar>
 			
 
@@ -28,15 +27,19 @@
 					<button class="search-button" @click="getPoetData">搜索</button>
 				</view> > -->
 				
-				<view class="poet-title" style="font-size: 40rpx ; margin: 20rpx 16rpx">朝代选择</view>
-				
-				<view class="uni-select" style="margin: 0 auto; width: 96%;">
-				      <uni-data-select
-				        v-model="dynastySelected"
-				        :localdata="range"
-				        @change="getPoetData()"
-				      ></uni-data-select>
+				<view style="display: flex; align-items: center; font-size: 30rpx; margin: 16rpx 18rpx; justify-content: space-between;">
+				  <view style="font-weight: bold; text-shadow: rgba(0, 0, 0, 0.15) 0.95px 0.95px 1.6px;">朝代选择</view>
+				  <view class="uni-select" style="flex-grow: 1; margin-left: 10rpx; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+				    <uni-data-select
+				      v-model="dynastySelected"
+				      :localdata="range"
+				      @change="getPoetData"
+				      :clear="false"
+				    ></uni-data-select>
+				  </view>
 				</view>
+
+
 			</view>
 			<!-- 内容0 头部内容结束 -->
 			
@@ -67,18 +70,35 @@
 		<view class="content" v-if="navIndex==1">
 			<!-- 内容1 头部开始 -->
 			<view class="poet-head">	
-				<view class="search-bar">
+				<!-- <view class="search-bar">
 					<input style="backgroundColor: #fff;" type="text" placeholder="请输入诗词名称" @input="onSearch" />
 					<button style="backgroundColor: #fff;" @click="getSearchPoemData">搜索</button>
-				</view>
-				<view class="poet-title" style="font-size: 40rpx ; margin: 20rpx 16rpx">体裁选择</view>
+				</view> -->
+				<uni-search-bar
+				bgColor="white" @confirm="getSearchPoemData" 
+				:focus="true" v-model="searchValuePoem"
+					@cancel="onCancelPoetSearch" @clear="onClearPoetSearch" placeholder="请输入诗词名称">
+				</uni-search-bar>
+				
+				<!-- <view class="poet-title" style="font-size: 40rpx ; margin: 20rpx 16rpx">体裁选择</view>
 				<!-- 下拉选择框开始 -->
-				<view class="select" style="margin: 0 auto; width: 96%;">
+				<!-- <view class="select" style="margin: 0 auto; width: 96%;">
 				      <uni-data-select
 				        v-model="genreSelected"
 				        :localdata="rangePoem"
 				        @change="getPoemData()"
 				      ></uni-data-select>
+				</view> --> 
+				<view style="display: flex; align-items: center; font-size: 30rpx; margin: 16rpx 18rpx; justify-content: space-between;">
+				  <view style="font-weight: bold; text-shadow: rgba(0, 0, 0, 0.15) 0.95px 0.95px 1.6px;">体裁选择</view>
+				  <view class="uni-select" style="flex-grow: 1; margin-left: 10rpx; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+				    <uni-data-select
+				      v-model="genreSelected"
+				      :localdata="range"
+				      @change="getPoemData"
+				      :clear="false"
+				    ></uni-data-select>
+				  </view>
 				</view>
 				<!-- 下拉选择框结束 -->	
 			</view>
@@ -359,10 +379,19 @@
 				this.searchValuePoem = res.detail.value;
 				console.log(this.searchValuePoem)
 			},
+			onCancelPoemSearch() {
+			      this.searchValuePoem = '';
+				  this.render();
+			    },
+			onClearPoemSearch() {
+			      this.searchValuePoem = '';
+				  this.render();
+			    },
 			getSearchPoemData() {
 				this.curPagePoem = 1
 				this.renderSearchPoem()
 			},
+			
 			renderSearchPoem() {
 				const baseUrl = 'http://www.poetryworld.cn:8198'
 				request({
