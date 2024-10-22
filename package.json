@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "echarts-wordcloud": "^2.1.0",
+    "js-cookie": "^3.0.5",
+    "vue-echarts": "^7.0.3"
+  }
+}

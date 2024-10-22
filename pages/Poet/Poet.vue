@@ -1,6 +1,6 @@
 <template>
 	<!-- 所有内容开始 -->
-	<view>
+	<view class="bg-set">
 		<view class="bg-set"></view>
 		<!-- tab切换开始 -->
 		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll">
@@ -14,14 +14,23 @@
 		<view class="content" v-if="navIndex==0">
 			<!-- 头部开始（搜索&复选框）-->
 			<view class="poet-head">	
-				<view class="search-bar">
+				
+			<uni-search-bar 
+			@confirm="getPoetData" 
+			:focus="true" v-model="searchValuePoet"
+				@cancel="onCancelPoetSearch" @clear="onClearPoetSearch">
+			</uni-search-bar>
+			
+
+		
+				<!-- < <view class="search-bar">
 					<input class="search-button" type="text" placeholder="请输入诗人名称" @input="onSearchPoet" />
 					<button class="search-button" @click="getPoetData">搜索</button>
-				</view>
+				</view> > -->
 				
 				<view class="poet-title" style="font-size: 40rpx ; margin: 20rpx 16rpx">朝代选择</view>
 				
-				<view class="select" style="margin: 0 auto; width: 96%;">
+				<view class="uni-select" style="margin: 0 auto; width: 96%;">
 				      <uni-data-select
 				        v-model="dynastySelected"
 				        :localdata="range"
@@ -40,7 +49,7 @@
 						<view class="poet-bd">【生卒】{{item.year}}</view>
 						<view class="intro">【简介】 {{item.intro}}</view>
 						<view class="card-actions">
-							<button @click="showPoetData(index)" style="text-align:left; color: #fff; margin-top: 10px; padding: 0px; padding-left: 10px;backgroundColor: #0a9a8d; border-radius: 4px; font-size: 26rpx">详细介绍</button>
+							<button @click="showPoetData(index)" style="text-align:left; color: #fff; margin-top: 10px; padding: 0px; padding-left: 10px;backgroundColor: #bbb5ac; border-radius: 4px; font-size: 26rpx">详细介绍</button>
 						</view>
 					</view>
 				</view>
@@ -224,6 +233,14 @@
 				this.curPage = 1;
 				this.render();
 			},
+			onCancelPoetSearch() {
+			      this.searchValuePoet = '';
+				  this.render();
+			    },
+			onClearPoetSearch() {
+			      this.searchValuePoet = '';
+				  this.render();
+			    },
 			prevPage() {
 				if(this.curPage > 1) {
 					this.curPage = this.curPage-1;
@@ -413,18 +430,18 @@
 <style scoped>
 	/* 设置背景颜色 */
 	.bg-set{
-	    position: fixed;
 	    width: 100%;
 	    height: 100%;
-	    top: 0;
-	    left: 0;
-	    background-color: #f5f5f5;
-	    z-index: -1;
+	    /*background-color: #f5f5f5;*/
+		background-image: url('/static/Poet/bg.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 	.activite {
-		color: #0a9a8d;
+		color: #856d72;
 		font-weight: 700;
-		border-bottom: 2px solid #0a9a8d;
+		border-bottom: 2px solid #856d72;
 	}
 
 	.content {
@@ -579,7 +596,8 @@
 	}
 	
 	.uni-select {
-		background-color: #fff
+		background-color: #f99;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 	}
 	.search-button {
 	  background-color: #fff;

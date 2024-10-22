@@ -20,17 +20,20 @@
 	/* #ifndef APP-NVUE */
 	@import '@/static/customicons.css';
 	// 设置整个项目的背景色
-	@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
-
-	page {
-		background-color: #ec9bad;
-		font-family: 'ZCOOL XiaoWei', serif;
+	@font-face {
+		font-family: "jinghua";
+		src: url('static/fonts/jinghua.ttf');
 	}
-	/* 自定义 tabBar 字体 */
-	.uni-tabbar__item_text {
-	  font-family: 'ZCOOL XiaoWei', serif;
+	page {
+		background-color: #eadfcb;
+		font-family: 'jinghua', serif;
+	}
+	/* 自定义 tabBar,标题 字体 */
+	.uni-tabbar {
+	  font-family: 'jinghua', serif;
 	  font-size: 14px;
 	}
+	
 	/* #endif */
 	.example-info {
 		font-size: 14px;

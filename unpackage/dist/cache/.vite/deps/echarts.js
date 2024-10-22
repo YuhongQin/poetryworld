@@ -1,7 +1,24 @@
 import {
   install,
   install2
-} from "./chunk-3TY24U2K.js";
+} from "./chunk-6HEWPMBO.js";
+import {
+  AxisBuilder_default,
+  AxisView_default,
+  BaseAxisPointer_default,
+  buildCartesianSingleLabelElOption,
+  buildElStyle,
+  buildLabelElOption,
+  findAxisModels,
+  getTransformedPosition,
+  install as install4,
+  install2 as install5,
+  isCartesian2DSeries,
+  layout as layout2,
+  makeLineShape,
+  makeRectShape,
+  makeSectorShape
+} from "./chunk-JVAXSKJZ.js";
 import {
   AxisModelCommonMixin,
   Axis_default,
@@ -24,24 +41,7 @@ import {
   setLabelLineStyle,
   time_exports,
   util_exports as util_exports2
-} from "./chunk-N3FQIBJ6.js";
-import {
-  AxisBuilder_default,
-  AxisView_default,
-  BaseAxisPointer_default,
-  buildCartesianSingleLabelElOption,
-  buildElStyle,
-  buildLabelElOption,
-  findAxisModels,
-  getTransformedPosition,
-  install as install3,
-  install2 as install4,
-  isCartesian2DSeries,
-  layout as layout2,
-  makeLineShape,
-  makeRectShape,
-  makeSectorShape
-} from "./chunk-6OKCWJ33.js";
+} from "./chunk-JDAIIIWS.js";
 import {
   Interval_default,
   OrdinalMeta_default,
@@ -62,10 +62,7 @@ import {
   niceScaleExtent,
   shiftLayoutOnY,
   unionAxisExtentFromData
-} from "./chunk-3W6B5EC7.js";
-import {
-  install as install5
-} from "./chunk-WNFZBVU6.js";
+} from "./chunk-GJNHW5C6.js";
 import {
   ECPolygon,
   SymbolDraw_default,
@@ -74,22 +71,25 @@ import {
   dataSample,
   getDefaultInterpolatedLabel,
   getDefaultLabel,
-  install as install6,
+  install as install3,
   isCoordinateSystemType,
   pointsLayout
-} from "./chunk-UF65ZDQ2.js";
+} from "./chunk-JLJD5O5Q.js";
 import {
   DataDiffer_default,
   SeriesData_default,
   createSeriesData_default,
   getDimensionTypeByAxis,
   prepareSeriesDataSchema
-} from "./chunk-QYHY3LEF.js";
+} from "./chunk-3VERVHA4.js";
 import {
   createFloat32Array,
   getStackedDimension,
   isDimensionStacked
-} from "./chunk-5M3RWMG5.js";
+} from "./chunk-6CC5ZG44.js";
+import {
+  install as install6
+} from "./chunk-OCIHAXV5.js";
 import {
   BezierCurve_default,
   BoundingRect_default,
@@ -402,10 +402,10 @@ import {
   warn,
   windowOpen,
   zrender_exports
-} from "./chunk-QLQCA2BD.js";
+} from "./chunk-QINJRSWT.js";
 import "./chunk-F5QR3K72.js";
 
-// C:/Users/14276/node_modules/zrender/lib/svg/SVGPathRebuilder.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/SVGPathRebuilder.js
 var mathSin = Math.sin;
 var mathCos = Math.cos;
 var PI = Math.PI;
@@ -505,7 +505,7 @@ var SVGPathRebuilder = function() {
 }();
 var SVGPathRebuilder_default = SVGPathRebuilder;
 
-// C:/Users/14276/node_modules/zrender/lib/svg/mapStyleToAttrs.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/mapStyleToAttrs.js
 var NONE = "none";
 var mathRound = Math.round;
 function pathHasFill(style) {
@@ -576,7 +576,7 @@ function mapStyleToAttrs(updateAttr2, style, el, forceUpdate) {
   }
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/core.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/core.js
 var SVGNS = "http://www.w3.org/2000/svg";
 var XLINKNS = "http://www.w3.org/1999/xlink";
 var XMLNS = "http://www.w3.org/2000/xmlns/";
@@ -680,13 +680,13 @@ function createSVGVNode(width, height, children, useViewBox) {
   }, children);
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/cssClassId.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/cssClassId.js
 var cssClassIdx = 0;
 function getClassId() {
   return cssClassIdx++;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/cssAnimation.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/cssAnimation.js
 var EASING_MAP = {
   cubicIn: "0.32,0,0.67,0",
   cubicOut: "0.33,1,0.68,1",
@@ -951,7 +951,7 @@ function createCSSAnimation(el, attrs, scope, onlyShape) {
   }
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/cssEmphasis.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/cssEmphasis.js
 function createCSSEmphasis(el, attrs, scope) {
   if (!el.ignore) {
     if (el.isSilent()) {
@@ -1002,7 +1002,7 @@ function setClassAttribute(style, attrs, scope, withHover) {
   attrs["class"] = attrs["class"] ? attrs["class"] + " " + className : className;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/graphic.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/graphic.js
 var round2 = Math.round;
 function isImageLike(val) {
   return val && isString(val.src);
@@ -1437,7 +1437,7 @@ function setClipPath(clipPath, attrs, scope) {
   attrs["clip-path"] = getIdURL(clipPathId);
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/domapi.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/domapi.js
 function createTextNode(text) {
   return document.createTextNode(text);
 }
@@ -1460,7 +1460,7 @@ function setTextContent(node, text) {
   node.textContent = text;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/patch.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/patch.js
 var colonChar = 58;
 var xChar = 120;
 var emptyNode = createVNode("", "");
@@ -1686,7 +1686,7 @@ function patch(oldVnode, vnode) {
   return vnode;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/svg/Painter.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/svg/Painter.js
 var svgId = 0;
 var SVGPainter = function() {
   function SVGPainter2(root, storage2, opts) {
@@ -1928,12 +1928,12 @@ function createBackgroundVNode(width, height, backgroundColor, scope) {
 }
 var Painter_default = SVGPainter;
 
-// C:/Users/14276/node_modules/echarts/lib/renderer/installSVGRenderer.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/renderer/installSVGRenderer.js
 function install7(registers) {
   registers.registerPainter("svg", Painter_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/BaseBarSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/BaseBarSeries.js
 var BaseBarSeriesModel = (
   /** @class */
   function(_super) {
@@ -2033,7 +2033,7 @@ var BaseBarSeriesModel = (
 Series_default.registerClass(BaseBarSeriesModel);
 var BaseBarSeries_default = BaseBarSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/BarSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/BarSeries.js
 var BarSeriesModel = (
   /** @class */
   function(_super) {
@@ -2095,7 +2095,7 @@ var BarSeriesModel = (
 );
 var BarSeries_default = BarSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/util/shape/sausage.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/util/shape/sausage.js
 var SausageShape = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -2159,7 +2159,7 @@ var SausagePath = (
 );
 var sausage_default = SausagePath;
 
-// C:/Users/14276/node_modules/echarts/lib/label/sectorLabel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/label/sectorLabel.js
 function createSectorCalculateTextPosition(positionMapping, opts) {
   opts = opts || {};
   var isRoundCap = opts.isRoundCap;
@@ -2307,7 +2307,7 @@ function adjustAngleDistanceY(angle, distance, isEnd) {
   return distance * Math.cos(angle) * (isEnd ? 1 : -1);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/sectorHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/sectorHelper.js
 function getSectorCornerRadius(model, shape, zeroIfNull) {
   var cornerRadius = model.get("borderRadius");
   if (cornerRadius == null) {
@@ -2326,7 +2326,7 @@ function getSectorCornerRadius(model, shape, zeroIfNull) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/BarView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/BarView.js
 var mathMax = Math.max;
 var mathMin = Math.min;
 function getClipArea(coord, data) {
@@ -3101,7 +3101,7 @@ function createBackgroundEl(coord, isHorizontalOrRadial, layout5) {
 }
 var BarView_default = BarView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/install.js
 function install8(registers) {
   registers.registerChartView(BarView_default);
   registers.registerSeriesModel(BarSeries_default);
@@ -3125,7 +3125,7 @@ function install8(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/pie/pieLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/pie/pieLayout.js
 var PI22 = Math.PI * 2;
 var RADIAN = Math.PI / 180;
 function getViewRect(seriesModel, api) {
@@ -3302,7 +3302,7 @@ function pieLayout(seriesType, ecModel, api) {
 }
 var getSeriesLayoutData = makeInner();
 
-// C:/Users/14276/node_modules/echarts/lib/processor/dataFilter.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/processor/dataFilter.js
 function dataFilter(seriesType) {
   return {
     seriesType,
@@ -3327,7 +3327,7 @@ function dataFilter(seriesType) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/pie/labelLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/pie/labelLayout.js
 var RADIAN2 = Math.PI / 180;
 function adjustSingleSide(list, cx, cy, r, dir, viewWidth, viewHeight, viewLeft, viewTop, farthestX) {
   if (list.length < 2) {
@@ -3711,7 +3711,7 @@ function pieLabelLayout(seriesModel) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/pie/PieView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/pie/PieView.js
 var PiePiece = (
   /** @class */
   function(_super) {
@@ -3927,7 +3927,7 @@ var PieView = (
 );
 var PieView_default = PieView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/createSeriesDataSimply.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/createSeriesDataSimply.js
 function createSeriesDataSimply(seriesModel, opt, nameList) {
   opt = isArray(opt) && {
     coordDimensions: opt
@@ -3941,7 +3941,7 @@ function createSeriesDataSimply(seriesModel, opt, nameList) {
   return list;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/visual/LegendVisualProvider.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/visual/LegendVisualProvider.js
 var LegendVisualProvider = (
   /** @class */
   function() {
@@ -3970,7 +3970,7 @@ var LegendVisualProvider = (
 );
 var LegendVisualProvider_default = LegendVisualProvider;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/pie/PieSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/pie/PieSeries.js
 var innerData = makeInner();
 var PieSeriesModel = (
   /** @class */
@@ -4121,7 +4121,7 @@ var PieSeriesModel = (
 );
 var PieSeries_default = PieSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/processor/negativeDataFilter.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/processor/negativeDataFilter.js
 function negativeDataFilter(seriesType) {
   return {
     seriesType,
@@ -4139,7 +4139,7 @@ function negativeDataFilter(seriesType) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/pie/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/pie/install.js
 function install9(registers) {
   registers.registerChartView(PieView_default);
   registers.registerSeriesModel(PieSeries_default);
@@ -4149,7 +4149,7 @@ function install9(registers) {
   registers.registerProcessor(negativeDataFilter("pie"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/scatter/ScatterSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/scatter/ScatterSeries.js
 var ScatterSeriesModel = (
   /** @class */
   function(_super) {
@@ -4223,7 +4223,7 @@ var ScatterSeriesModel = (
 );
 var ScatterSeries_default = ScatterSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/LargeSymbolDraw.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/LargeSymbolDraw.js
 var BOOST_SIZE_THRESHOLD = 4;
 var LargeSymbolPathShape = (
   /** @class */
@@ -4471,7 +4471,7 @@ var LargeSymbolDraw = (
 );
 var LargeSymbolDraw_default = LargeSymbolDraw;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/scatter/ScatterView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/scatter/ScatterView.js
 var ScatterView = (
   /** @class */
   function(_super) {
@@ -4559,7 +4559,7 @@ var ScatterView = (
 );
 var ScatterView_default = ScatterView;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/GridModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/GridModel.js
 var GridModel = (
   /** @class */
   function(_super) {
@@ -4591,7 +4591,7 @@ var GridModel = (
 );
 var GridModel_default = GridModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/AxisModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/AxisModel.js
 var CartesianAxisModel = (
   /** @class */
   function(_super) {
@@ -4608,7 +4608,7 @@ var CartesianAxisModel = (
 );
 mixin(CartesianAxisModel, AxisModelCommonMixin);
 
-// C:/Users/14276/node_modules/echarts/lib/coord/axisDefault.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/axisDefault.js
 var defaultOption = {
   show: true,
   // zlevel: 0,
@@ -4768,7 +4768,7 @@ var axisDefault_default = {
   log: logAxis
 };
 
-// C:/Users/14276/node_modules/echarts/lib/coord/axisCommonTypes.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/axisCommonTypes.js
 var AXIS_TYPES = {
   value: 1,
   category: 1,
@@ -4776,7 +4776,7 @@ var AXIS_TYPES = {
   log: 1
 };
 
-// C:/Users/14276/node_modules/echarts/lib/coord/axisModelCreator.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/axisModelCreator.js
 function axisModelCreator(registers, axisName, BaseAxisModelClass, extraDefaultOption) {
   each(AXIS_TYPES, function(v, axisType) {
     var defaultOption3 = merge(merge({}, axisDefault_default[axisType], true), extraDefaultOption, true);
@@ -4831,7 +4831,7 @@ function getAxisType(option) {
   return option.type || (option.data ? "category" : "value");
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/Cartesian.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/Cartesian.js
 var Cartesian = (
   /** @class */
   function() {
@@ -4865,7 +4865,7 @@ var Cartesian = (
 );
 var Cartesian_default = Cartesian;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/Cartesian2D.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/Cartesian2D.js
 var cartesian2DDimensions = ["x", "y"];
 function canCalculateAffineTransform(scale3) {
   return scale3.type === "interval" || scale3.type === "time";
@@ -4975,7 +4975,7 @@ var Cartesian2D = (
 );
 var Cartesian2D_default = Cartesian2D;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/Axis2D.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/Axis2D.js
 var Axis2D = (
   /** @class */
   function(_super) {
@@ -5013,7 +5013,7 @@ var Axis2D = (
 );
 var Axis2D_default = Axis2D;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/axisAlignTicks.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/axisAlignTicks.js
 var mathLog = Math.log;
 function alignScaleTicks(scale3, axisModel, alignToScale) {
   var intervalScaleProto = Interval_default.prototype;
@@ -5093,7 +5093,7 @@ function alignScaleTicks(scale3, axisModel, alignToScale) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/Grid.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/Grid.js
 var Grid = (
   /** @class */
   function() {
@@ -5469,7 +5469,7 @@ function updateAxisTransform(axis, coordBase) {
 }
 var Grid_default = Grid;
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/axisSplitHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/axisSplitHelper.js
 var inner = makeInner();
 function rectCoordAxisBuildSplitArea(axisView, axisGroup, axisModel, gridModel) {
   var axis = axisModel.axis;
@@ -5546,7 +5546,7 @@ function rectCoordAxisHandleRemove(axisView) {
   inner(axisView).splitAreaColors = null;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/CartesianAxisView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/CartesianAxisView.js
 var axisBuilderAttrs = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs = ["splitArea", "splitLine", "minorSplitLine"];
 var CartesianAxisView = (
@@ -5727,7 +5727,7 @@ var CartesianYAxisView = (
   }(CartesianAxisView)
 );
 
-// C:/Users/14276/node_modules/echarts/lib/component/grid/installSimple.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/grid/installSimple.js
 var GridView = (
   /** @class */
   function(_super) {
@@ -5774,7 +5774,7 @@ function install10(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/scatter/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/scatter/install.js
 function install11(registers) {
   use(install10);
   registers.registerSeriesModel(ScatterSeries_default);
@@ -5782,7 +5782,7 @@ function install11(registers) {
   registers.registerLayout(pointsLayout("scatter"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/radar/radarLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/radar/radarLayout.js
 function radarLayout(ecModel) {
   ecModel.eachSeriesByType("radar", function(seriesModel) {
     var data = seriesModel.getData();
@@ -5815,7 +5815,7 @@ function getValueMissingPoint(coordSys) {
   return [coordSys.cx, coordSys.cy];
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/radar/backwardCompat.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/radar/backwardCompat.js
 function radarBackwardCompat(option) {
   var polarOptArr = option.polar;
   if (polarOptArr) {
@@ -5846,7 +5846,7 @@ function radarBackwardCompat(option) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/radar/RadarView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/radar/RadarView.js
 var RadarView = (
   /** @class */
   function(_super) {
@@ -6021,7 +6021,7 @@ var RadarView = (
 );
 var RadarView_default = RadarView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/radar/RadarSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/radar/RadarSeries.js
 var RadarSeriesModel = (
   /** @class */
   function(_super) {
@@ -6107,7 +6107,7 @@ var RadarSeriesModel = (
 );
 var RadarSeries_default = RadarSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/radar/RadarModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/radar/RadarModel.js
 var valueAxisDefault = axisDefault_default.value;
 function defaultsShow(opt, show) {
   return defaults({
@@ -6217,7 +6217,7 @@ var RadarModel = (
 );
 var RadarModel_default = RadarModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/radar/RadarView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/radar/RadarView.js
 var axisBuilderAttrs2 = ["axisLine", "axisTickLabel", "axisName"];
 var RadarView2 = (
   /** @class */
@@ -6373,7 +6373,7 @@ var RadarView2 = (
 );
 var RadarView_default2 = RadarView2;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/radar/IndicatorAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/radar/IndicatorAxis.js
 var IndicatorAxis = (
   /** @class */
   function(_super) {
@@ -6390,7 +6390,7 @@ var IndicatorAxis = (
 );
 var IndicatorAxis_default = IndicatorAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/radar/Radar.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/radar/Radar.js
 var Radar = (
   /** @class */
   function() {
@@ -6523,7 +6523,7 @@ var Radar = (
 );
 var Radar_default = Radar;
 
-// C:/Users/14276/node_modules/echarts/lib/component/radar/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/radar/install.js
 function install12(registers) {
   registers.registerCoordinateSystem("radar", Radar_default);
   registers.registerComponentModel(RadarModel_default);
@@ -6540,7 +6540,7 @@ function install12(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/radar/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/radar/install.js
 function install13(registers) {
   use(install12);
   registers.registerChartView(RadarView_default);
@@ -6550,7 +6550,7 @@ function install13(registers) {
   registers.registerPreprocessor(radarBackwardCompat);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/interactionMutex.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/interactionMutex.js
 var ATTR = "\0_ec_interaction_mutex";
 function take(zr, resourceKey, userKey) {
   var store = getStore(zr);
@@ -6575,7 +6575,7 @@ registerAction({
   update: "update"
 }, noop);
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/RoamController.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/RoamController.js
 var RoamController = (
   /** @class */
   function(_super) {
@@ -6740,7 +6740,7 @@ function isAvailableBehavior(behaviorToCheck, e, settings) {
 }
 var RoamController_default = RoamController;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/roamHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/roamHelper.js
 function updateViewOnPan(controllerHost, dx, dy) {
   var target = controllerHost.target;
   target.x += dx;
@@ -6766,7 +6766,7 @@ function updateViewOnZoom(controllerHost, zoomDelta, zoomX, zoomY) {
   target.dirty();
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/cursorHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/cursorHelper.js
 var IRRELEVANT_EXCLUDES = {
   "axisPointer": 1,
   "tooltip": 1,
@@ -6778,7 +6778,7 @@ function onIrrelevantElement(e, api, targetCoordSysModel) {
   return model && model !== targetCoordSysModel && !IRRELEVANT_EXCLUDES.hasOwnProperty(model.mainType) && coordSys && coordSys.model !== targetCoordSysModel;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/tool/parseXML.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/tool/parseXML.js
 function parseXML(svg) {
   if (isString(svg)) {
     var parser = new DOMParser();
@@ -6794,7 +6794,7 @@ function parseXML(svg) {
   return svgNode;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/tool/parseSVG.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/tool/parseSVG.js
 var nodeParsers;
 var INHERITABLE_STYLE_ATTRIBUTES_MAP = {
   "fill": "fill",
@@ -7411,7 +7411,7 @@ function parseSVG(xml, opt) {
   return parser.parse(xml, opt);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/GeoSVGResource.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/GeoSVGResource.js
 var REGION_AVAILABLE_SVG_TAG_MAP = createHashMap([
   "rect",
   "circle",
@@ -7576,7 +7576,7 @@ function createRegions(named) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/fix/nanhai.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/fix/nanhai.js
 var geoCoord = [126, 25];
 var nanhaiName = "南海诸岛";
 var points = [[[0, 3.5], [7, 11.2], [15, 11.9], [30, 7], [42, 0.7], [52, 0.7], [56, 7.7], [59, 0.7], [64, 0.7], [64, 0], [5, 0], [0, 3.5]], [[13, 16.1], [19, 14.7], [16, 21.7], [11, 23.1], [13, 16.1]], [[12, 32.2], [14, 38.5], [15, 38.5], [13, 32.2], [12, 32.2]], [[16, 47.6], [12, 53.2], [13, 53.2], [18, 47.6], [16, 47.6]], [[6, 64.4], [8, 70], [9, 70], [8, 64.4], [6, 64.4]], [[23, 82.6], [29, 79.8], [30, 79.8], [25, 82.6], [23, 82.6]], [[37, 70.7], [43, 62.3], [44, 62.3], [39, 70.7], [37, 70.7]], [[48, 51.1], [51, 45.5], [53, 45.5], [50, 51.1], [48, 51.1]], [[51, 35], [51, 28.7], [53, 28.7], [53, 35], [51, 35]], [[52, 22.4], [55, 17.5], [56, 17.5], [53, 22.4], [52, 22.4]], [[58, 12.6], [62, 7], [63, 7], [60, 12.6], [58, 12.6]], [[0, 3.5], [0, 93.1], [64, 93.1], [64, 0], [63, 0], [63, 92.4], [1, 92.4], [1, 3.5], [0, 3.5]]];
@@ -7606,7 +7606,7 @@ function fixNanhai(mapType, regions) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/fix/textCoord.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/fix/textCoord.js
 var coordsOffsetMap = {
   "南海诸岛": [32, 80],
   // 全国
@@ -7628,7 +7628,7 @@ function fixTextCoords(mapType, region) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/fix/diaoyuIsland.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/fix/diaoyuIsland.js
 var points2 = [[[123.45165252685547, 25.73527164402261], [123.49731445312499, 25.73527164402261], [123.49731445312499, 25.750734064600884], [123.45165252685547, 25.750734064600884], [123.45165252685547, 25.73527164402261]]];
 function fixDiaoyuIsland(mapType, region) {
   if (mapType === "china" && region.name === "台湾") {
@@ -7639,7 +7639,7 @@ function fixDiaoyuIsland(mapType, region) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/GeoJSONResource.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/GeoJSONResource.js
 var DEFAULT_NAME_PROPERTY = "name";
 var GeoJSONResource = (
   /** @class */
@@ -7724,7 +7724,7 @@ function parseInput(source) {
   return !isString(source) ? source : typeof JSON !== "undefined" && JSON.parse ? JSON.parse(source) : new Function("return (" + source + ");")();
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/geoSourceManager.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/geoSourceManager.js
 var storage = createHashMap();
 var geoSourceManager_default = {
   /**
@@ -7795,7 +7795,7 @@ var geoSourceManager_default = {
   }
 };
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/MapDraw.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/MapDraw.js
 var OPTION_STYLE_ENABLED_TAGS = ["rect", "circle", "line", "ellipse", "polygon", "polyline", "path"];
 var OPTION_STYLE_ENABLED_TAG_MAP = createHashMap(OPTION_STYLE_ENABLED_TAGS);
 var STATE_TRIGGER_TAG_MAP = createHashMap(OPTION_STYLE_ENABLED_TAGS.concat(["g"]));
@@ -8292,7 +8292,7 @@ function projectPolys(rings, createStream, isLine) {
 }
 var MapDraw_default = MapDraw;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/map/MapView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/map/MapView.js
 var MapView = (
   /** @class */
   function(_super) {
@@ -8405,7 +8405,7 @@ var MapView = (
 );
 var MapView_default = MapView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/map/MapSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/map/MapSeries.js
 var MapSeries = (
   /** @class */
   function(_super) {
@@ -8580,7 +8580,7 @@ var MapSeries = (
 );
 var MapSeries_default = MapSeries;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/map/mapDataStatistic.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/map/mapDataStatistic.js
 function dataStatistics(datas, statisticType) {
   var dataNameMap = {};
   each(datas, function(data) {
@@ -8639,7 +8639,7 @@ function mapDataStatistic(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/map/mapSymbolLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/map/mapSymbolLayout.js
 function mapSymbolLayout(ecModel) {
   var processedMapType = {};
   ecModel.eachSeriesByType("map", function(mapSeries) {
@@ -8679,7 +8679,7 @@ function mapSymbolLayout(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/View.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/View.js
 var v2ApplyTransform = applyTransform;
 var View = (
   /** @class */
@@ -8837,7 +8837,7 @@ function getCoordSys(finder) {
 }
 var View_default = View;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/Geo.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/Geo.js
 var GEO_DEFAULT_PARAMS = {
   "geoJSON": {
     aspectScale: 0.75,
@@ -8978,7 +8978,7 @@ function getCoordSys2(finder) {
 }
 var Geo_default = Geo;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/geoCreator.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/geoCreator.js
 function resizeGeo(geoModel, api) {
   var boundingCoords = geoModel.get("boundingCoords");
   if (boundingCoords != null) {
@@ -9147,7 +9147,7 @@ var GeoCreator = (
 var geoCreator = new GeoCreator();
 var geoCreator_default = geoCreator;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/GeoModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/GeoModel.js
 var GeoModel = (
   /** @class */
   function(_super) {
@@ -9302,7 +9302,7 @@ var GeoModel = (
 );
 var GeoModel_default = GeoModel;
 
-// C:/Users/14276/node_modules/echarts/lib/action/roamHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/action/roamHelper.js
 function getCenterCoord(view, point) {
   return view.pointToProjected ? view.pointToProjected(point) : view.pointToData(point);
 }
@@ -9338,7 +9338,7 @@ function updateCenterAndZoom(view, payload, zoomLimit, api) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/geo/GeoView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/geo/GeoView.js
 var GeoView = (
   /** @class */
   function(_super) {
@@ -9404,7 +9404,7 @@ var GeoView = (
 );
 var GeoView_default = GeoView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/geo/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/geo/install.js
 function registerMap2(mapName, geoJson, specialAreas) {
   geoSourceManager_default.registerMap(mapName, geoJson, specialAreas);
 }
@@ -9486,7 +9486,7 @@ function install14(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/map/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/map/install.js
 function install15(registers) {
   use(install14);
   registers.registerChartView(MapView_default);
@@ -9496,7 +9496,7 @@ function install15(registers) {
   createLegacyDataSelectAction("map", registers.registerAction);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/layoutHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/layoutHelper.js
 function init2(inRoot) {
   var root = inRoot;
   root.hierNode = {
@@ -9647,7 +9647,7 @@ function defaultSeparation(node1, node2) {
   return node1.parentNode === node2.parentNode ? 1 : 2;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/TreeView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/TreeView.js
 var TreeEdgeShape = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -10192,7 +10192,7 @@ function getEdgeShape(layoutOpt, orient, curvature, sourceLayout, targetLayout) 
 }
 var TreeView_default = TreeView;
 
-// C:/Users/14276/node_modules/echarts/lib/data/helper/linkSeriesData.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/helper/linkSeriesData.js
 var inner2 = makeInner();
 function linkSeriesData(opt) {
   var mainData = opt.mainData;
@@ -10275,7 +10275,7 @@ function linkSingle(data, dataType, mainData, opt) {
 }
 var linkSeriesData_default = linkSeriesData;
 
-// C:/Users/14276/node_modules/echarts/lib/data/Tree.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/Tree.js
 var TreeNode = (
   /** @class */
   function() {
@@ -10514,7 +10514,7 @@ function addChild(child, node) {
 }
 var Tree_default = Tree;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/treeHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/treeHelper.js
 function retrieveTargetInfo(payload, validPayloadTypes, seriesModel) {
   if (payload && indexOf(validPayloadTypes, payload.type) >= 0) {
     var root = seriesModel.getData().tree.root;
@@ -10562,7 +10562,7 @@ function wrapTreePathInfo(node, seriesModel) {
   return treePathInfo;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/TreeSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/TreeSeries.js
 var TreeSeriesModel = (
   /** @class */
   function(_super) {
@@ -10692,7 +10692,7 @@ var TreeSeriesModel = (
 );
 var TreeSeries_default = TreeSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/traversalHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/traversalHelper.js
 function eachAfter(root, callback, separation2) {
   var nodes = [root];
   var next = [];
@@ -10728,7 +10728,7 @@ function eachBefore(root, callback) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/treeLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/treeLayout.js
 function treeLayout(ecModel, api) {
   ecModel.eachSeriesByType("tree", function(seriesModel) {
     commonLayout(seriesModel, api);
@@ -10823,7 +10823,7 @@ function commonLayout(seriesModel, api) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/treeVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/treeVisual.js
 function treeVisual(ecModel) {
   ecModel.eachSeriesByType("tree", function(seriesModel) {
     var data = seriesModel.getData();
@@ -10837,7 +10837,7 @@ function treeVisual(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/treeAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/treeAction.js
 function installTreeAction(registers) {
   registers.registerAction({
     type: "treeExpandAndCollapse",
@@ -10877,7 +10877,7 @@ function installTreeAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/tree/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/tree/install.js
 function install16(registers) {
   registers.registerChartView(TreeView_default);
   registers.registerSeriesModel(TreeSeries_default);
@@ -10886,7 +10886,7 @@ function install16(registers) {
   installTreeAction(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/treemapAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/treemapAction.js
 var actionTypes = ["treemapZoomToNode", "treemapRender", "treemapMove"];
 function installTreemapAction(registers) {
   for (var i = 0; i < actionTypes.length; i++) {
@@ -10918,7 +10918,7 @@ function installTreemapAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/enableAriaDecalForTree.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/enableAriaDecalForTree.js
 function enableAriaDecalForTree(seriesModel) {
   var data = seriesModel.getData();
   var tree = data.tree;
@@ -10933,7 +10933,7 @@ function enableAriaDecalForTree(seriesModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/TreemapSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/TreemapSeries.js
 var TreemapSeriesModel = (
   /** @class */
   function(_super) {
@@ -11186,7 +11186,7 @@ function setDefault(levels, ecModel) {
 }
 var TreemapSeries_default = TreemapSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/Breadcrumb.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/Breadcrumb.js
 var TEXT_PADDING = 8;
 var ITEM_GAP = 8;
 var ARRAY_LENGTH = 5;
@@ -11317,7 +11317,7 @@ function packEventData(el, seriesModel, itemNode) {
 }
 var Breadcrumb_default = Breadcrumb;
 
-// C:/Users/14276/node_modules/echarts/lib/util/animation.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/util/animation.js
 var AnimationWrap = (
   /** @class */
   function() {
@@ -11374,7 +11374,7 @@ function createWrap() {
   return new AnimationWrap();
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/TreemapView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/TreemapView.js
 var Group = Group_default;
 var Rect = Rect_default;
 var DRAG_THRESHOLD = 3;
@@ -12085,7 +12085,7 @@ function calculateZ2(depth, z2InLevel) {
 }
 var TreemapView_default = TreemapView;
 
-// C:/Users/14276/node_modules/echarts/lib/visual/VisualMapping.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/visual/VisualMapping.js
 var each2 = each;
 var isObject2 = isObject;
 var CATEGORY_DEFAULT_VISUAL_INDEX = -1;
@@ -12448,7 +12448,7 @@ function littleThan(close, a, b) {
 }
 var VisualMapping_default = VisualMapping;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/treemapVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/treemapVisual.js
 var ITEM_STYLE_NORMAL = "itemStyle";
 var inner4 = makeInner();
 var treemapVisual_default = {
@@ -12581,7 +12581,7 @@ function mapVisual(nodeModel, visuals, child, index, mapping, seriesModel) {
   return childVisuals;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/treemapLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/treemapLayout.js
 var mathMax2 = Math.max;
 var mathMin2 = Math.min;
 var retrieveValue = retrieve;
@@ -12936,7 +12936,7 @@ function getUpperLabelHeight(model) {
   return model.get(PATH_UPPER_LABEL_SHOW) ? model.get(PATH_UPPER_LABEL_HEIGHT) : 0;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/treemap/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/treemap/install.js
 function install17(registers) {
   registers.registerSeriesModel(TreemapSeries_default);
   registers.registerChartView(TreemapView_default);
@@ -12945,7 +12945,7 @@ function install17(registers) {
   installTreemapAction(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/categoryFilter.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/categoryFilter.js
 function categoryFilter(ecModel) {
   var legendModels = ecModel.findComponents({
     mainType: "legend"
@@ -12976,7 +12976,7 @@ function categoryFilter(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/categoryVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/categoryVisual.js
 function categoryVisual(ecModel) {
   var paletteScope = {};
   ecModel.eachSeriesByType("graph", function(seriesModel) {
@@ -13021,7 +13021,7 @@ function categoryVisual(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/edgeVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/edgeVisual.js
 function normalize2(a) {
   if (!(a instanceof Array)) {
     a = [a, a];
@@ -13067,7 +13067,7 @@ function graphEdgeVisual(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/multipleGraphEdgeHelper.js
 var KEY_DELIMITER = "-->";
 var getAutoCurvenessParams = function(seriesModel) {
   return seriesModel.get("autoCurveness") || null;
@@ -13183,7 +13183,7 @@ function getCurvenessForEdge(edge, seriesModel, index, needReverse) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/simpleLayoutHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/simpleLayoutHelper.js
 function simpleLayout(seriesModel) {
   var coordSys = seriesModel.coordinateSystem;
   if (coordSys && coordSys.type !== "view") {
@@ -13209,7 +13209,7 @@ function simpleLayoutEdge(graph, seriesModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/simpleLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/simpleLayout.js
 function graphSimpleLayout(ecModel, api) {
   ecModel.eachSeriesByType("graph", function(seriesModel) {
     var layout5 = seriesModel.get("layout");
@@ -13243,7 +13243,7 @@ function graphSimpleLayout(ecModel, api) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/graphHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/graphHelper.js
 function getNodeGlobalScale(seriesModel) {
   var coordSys = seriesModel.coordinateSystem;
   if (coordSys.type !== "view") {
@@ -13263,7 +13263,7 @@ function getSymbolSize(node) {
   return +symbolSize;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/circularLayoutHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/circularLayoutHelper.js
 var PI3 = Math.PI;
 var _symbolRadiansHalf = [];
 function circularLayout(seriesModel, basedOn, draggingNode, pointer) {
@@ -13381,7 +13381,7 @@ function rotateNodeLabel(node, circularRotateLabel, cx, cy) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/circularLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/circularLayout.js
 function graphCircularLayout(ecModel) {
   ecModel.eachSeriesByType("graph", function(seriesModel) {
     if (seriesModel.get("layout") === "circular") {
@@ -13390,7 +13390,7 @@ function graphCircularLayout(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/forceHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/forceHelper.js
 var scaleAndAdd2 = scaleAndAdd;
 function forceLayout(inNodes, inEdges, opts) {
   var nodes = inNodes;
@@ -13500,7 +13500,7 @@ function forceLayout(inNodes, inEdges, opts) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/forceLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/forceLayout.js
 function graphForceLayout(ecModel) {
   ecModel.eachSeriesByType("graph", function(graphSeries) {
     var coordSys = graphSeries.coordinateSystem;
@@ -13606,7 +13606,7 @@ function graphForceLayout(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/createView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/createView.js
 function getViewRect3(seriesModel, api, aspect) {
   var option = extend(seriesModel.getBoxLayoutParams(), {
     aspect
@@ -13659,7 +13659,7 @@ function createViewCoordSys(ecModel, api) {
   return viewList;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/LinePath.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/LinePath.js
 var straightLineProto = Line_default.prototype;
 var bezierCurveProto = BezierCurve_default.prototype;
 var StraightLineShape = (
@@ -13730,7 +13730,7 @@ var ECLinePath = (
 );
 var LinePath_default = ECLinePath;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/Line.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/Line.js
 var SYMBOL_CATEGORIES = ["fromSymbol", "toSymbol"];
 function makeSymbolTypeKey(symbolCategory) {
   return "_" + symbolCategory + "Type";
@@ -14080,7 +14080,7 @@ var Line = (
 );
 var Line_default2 = Line;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/LineDraw.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/LineDraw.js
 var LineDraw = (
   /** @class */
   function() {
@@ -14202,7 +14202,7 @@ function lineNeedsDraw(pts) {
 }
 var LineDraw_default = LineDraw;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/adjustEdge.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/adjustEdge.js
 var v1 = [];
 var v2 = [];
 var v3 = [];
@@ -14318,7 +14318,7 @@ function adjustEdge(graph, scale3) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/GraphView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/GraphView.js
 function isViewCoordSys(coordSys) {
   return coordSys.type === "view";
 }
@@ -14525,7 +14525,7 @@ var GraphView = (
 );
 var GraphView_default = GraphView;
 
-// C:/Users/14276/node_modules/echarts/lib/data/Graph.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/Graph.js
 function generateNodeKey(id) {
   return "_EC_" + id;
 }
@@ -14889,7 +14889,7 @@ mixin(GraphNode, createGraphDataProxyMixin("hostGraph", "data"));
 mixin(GraphEdge, createGraphDataProxyMixin("hostGraph", "edgeData"));
 var Graph_default = Graph;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/createGraphFromNodeEdge.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/createGraphFromNodeEdge.js
 function createGraphFromNodeEdge(nodes, edges, seriesModel, directed, beforeLink) {
   var graph = new Graph_default(directed);
   for (var i = 0; i < nodes.length; i++) {
@@ -14950,7 +14950,7 @@ function createGraphFromNodeEdge(nodes, edges, seriesModel, directed, beforeLink
   return graph;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/GraphSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/GraphSeries.js
 var GraphSeriesModel = (
   /** @class */
   function(_super) {
@@ -15168,7 +15168,7 @@ var GraphSeriesModel = (
 );
 var GraphSeries_default = GraphSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/graph/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/graph/install.js
 var actionInfo = {
   type: "graphRoam",
   event: "graphRoam",
@@ -15210,7 +15210,7 @@ function install18(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/gauge/PointerPath.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/gauge/PointerPath.js
 var PointerShape = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -15256,7 +15256,7 @@ var PointerPath = (
 );
 var PointerPath_default = PointerPath;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/gauge/GaugeView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/gauge/GaugeView.js
 function parsePosition(seriesModel, api) {
   var center2 = seriesModel.get("center");
   var width = api.getWidth();
@@ -15755,7 +15755,7 @@ var GaugeView = (
 );
 var GaugeView_default = GaugeView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/gauge/GaugeSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/gauge/GaugeSeries.js
 var GaugeSeriesModel = (
   /** @class */
   function(_super) {
@@ -15899,13 +15899,13 @@ var GaugeSeriesModel = (
 );
 var GaugeSeries_default = GaugeSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/gauge/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/gauge/install.js
 function install19(registers) {
   registers.registerChartView(GaugeView_default);
   registers.registerSeriesModel(GaugeSeries_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/funnel/FunnelView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/funnel/FunnelView.js
 var opacityAccessPath = ["itemStyle", "opacity"];
 var FunnelPiece = (
   /** @class */
@@ -16060,7 +16060,7 @@ var FunnelView = (
 );
 var FunnelView_default = FunnelView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/funnel/FunnelSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/funnel/FunnelSeries.js
 var FunnelSeriesModel = (
   /** @class */
   function(_super) {
@@ -16152,7 +16152,7 @@ var FunnelSeriesModel = (
 );
 var FunnelSeries_default = FunnelSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/funnel/funnelLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/funnel/funnelLayout.js
 function getViewRect4(seriesModel, api) {
   return getLayoutRect(seriesModel.getBoxLayoutParams(), {
     width: api.getWidth(),
@@ -16440,7 +16440,7 @@ function funnelLayout(ecModel, api) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/funnel/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/funnel/install.js
 function install20(registers) {
   registers.registerChartView(FunnelView_default);
   registers.registerSeriesModel(FunnelSeries_default);
@@ -16448,7 +16448,7 @@ function install20(registers) {
   registers.registerProcessor(dataFilter("funnel"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/parallel/ParallelView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/parallel/ParallelView.js
 var DEFAULT_SMOOTH = 0.3;
 var ParallelView = (
   /** @class */
@@ -16598,7 +16598,7 @@ function isEmptyValue(val, axisType) {
 }
 var ParallelView_default = ParallelView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/parallel/ParallelSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/parallel/ParallelSeries.js
 var ParallelSeriesModel = (
   /** @class */
   function(_super) {
@@ -16672,7 +16672,7 @@ function convertDimNameToNumber(dimName) {
 }
 var ParallelSeries_default = ParallelSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/parallel/parallelVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/parallel/parallelVisual.js
 var opacityAccessPath2 = ["lineStyle", "opacity"];
 var parallelVisual = {
   seriesType: "parallel",
@@ -16700,7 +16700,7 @@ var parallelVisual = {
 };
 var parallelVisual_default = parallelVisual;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/parallelPreprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/parallelPreprocessor.js
 function parallelPreprocessor(option) {
   createParallelIfNeeded(option);
   mergeAxisOptionFromParallel(option);
@@ -16733,7 +16733,7 @@ function mergeAxisOptionFromParallel(option) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/parallel/ParallelView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/parallel/ParallelView.js
 var CLICK_THRESHOLD = 5;
 var ParallelView2 = (
   /** @class */
@@ -16819,7 +16819,7 @@ function checkTrigger(view, triggerOn) {
 }
 var ParallelView_default2 = ParallelView2;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/ParallelModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/ParallelModel.js
 var ParallelModel = (
   /** @class */
   function(_super) {
@@ -16894,7 +16894,7 @@ var ParallelModel = (
 );
 var ParallelModel_default = ParallelModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/ParallelAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/ParallelAxis.js
 var ParallelAxis = (
   /** @class */
   function(_super) {
@@ -16913,7 +16913,7 @@ var ParallelAxis = (
 );
 var ParallelAxis_default = ParallelAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/sliderMove.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/sliderMove.js
 function sliderMove(delta, handleEnds, extent, handleIndex, minSpan, maxSpan) {
   delta = delta || 0;
   var extentSpan = extent[1] - extent[0];
@@ -16959,7 +16959,7 @@ function restrict(value, extend2) {
   return Math.min(extend2[1] != null ? extend2[1] : Infinity, Math.max(extend2[0] != null ? extend2[0] : -Infinity, value));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/Parallel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/Parallel.js
 var each4 = each;
 var mathMin3 = Math.min;
 var mathMax3 = Math.max;
@@ -17259,7 +17259,7 @@ function layoutAxisWithExpand(axisIndex, layoutInfo) {
 }
 var Parallel_default = Parallel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/parallelCreator.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/parallelCreator.js
 function createParallelCoordSys(ecModel, api) {
   var coordSysList = [];
   ecModel.eachComponent("parallel", function(parallelModel, idx) {
@@ -17283,7 +17283,7 @@ var parallelCoordSysCreator = {
 };
 var parallelCreator_default = parallelCoordSysCreator;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/parallel/AxisModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/parallel/AxisModel.js
 var ParallelAxisModel = (
   /** @class */
   function(_super) {
@@ -17341,7 +17341,7 @@ var ParallelAxisModel = (
 mixin(ParallelAxisModel, AxisModelCommonMixin);
 var AxisModel_default = ParallelAxisModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/BrushController.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/BrushController.js
 var BRUSH_PANEL_GLOBAL = true;
 var mathMin4 = Math.min;
 var mathMax4 = Math.max;
@@ -17987,7 +17987,7 @@ function getLineRenderer(xyIndex) {
 }
 var BrushController_default = BrushController;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/brushHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/brushHelper.js
 function makeRectPanelClipPath(rect) {
   rect = normalizeRect(rect);
   return function(localPoints) {
@@ -18013,7 +18013,7 @@ function normalizeRect(rect) {
   return BoundingRect_default.create(rect);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/ParallelAxisView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/ParallelAxisView.js
 var elementList = ["axisLine", "axisTickLabel", "axisName"];
 var ParallelAxisView = (
   /** @class */
@@ -18127,7 +18127,7 @@ function getCoordSysModel(axisModel, ecModel) {
 }
 var ParallelAxisView_default = ParallelAxisView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/parallelAxisAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/parallelAxisAction.js
 var actionInfo2 = {
   type: "axisAreaSelect",
   event: "axisAreaSelected"
@@ -18152,7 +18152,7 @@ function installParallelActions(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/parallel/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/parallel/install.js
 var defaultAxisOption = {
   type: "value",
   areaSelectStyle: {
@@ -18176,7 +18176,7 @@ function install21(registers) {
   installParallelActions(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/parallel/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/parallel/install.js
 function install22(registers) {
   use(install21);
   registers.registerChartView(ParallelView_default);
@@ -18184,7 +18184,7 @@ function install22(registers) {
   registers.registerVisual(registers.PRIORITY.VISUAL.BRUSH, parallelVisual_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sankey/SankeyView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sankey/SankeyView.js
 var SankeyPathShape = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -18466,7 +18466,7 @@ function createGridClipShape2(rect, seriesModel, cb) {
 }
 var SankeyView_default = SankeyView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sankey/SankeySeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sankey/SankeySeries.js
 var SankeySeriesModel = (
   /** @class */
   function(_super) {
@@ -18622,7 +18622,7 @@ var SankeySeriesModel = (
 );
 var SankeySeries_default = SankeySeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sankey/sankeyLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sankey/sankeyLayout.js
 function sankeyLayout(ecModel, api) {
   ecModel.eachSeriesByType("sankey", function(seriesModel) {
     var nodeWidth = seriesModel.get("nodeWidth");
@@ -19004,7 +19004,7 @@ function computeEdgeDepths(nodes, orient) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sankey/sankeyVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sankey/sankeyVisual.js
 function sankeyVisual(ecModel) {
   ecModel.eachSeriesByType("sankey", function(seriesModel) {
     var graph = seriesModel.getGraph();
@@ -19053,7 +19053,7 @@ function sankeyVisual(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sankey/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sankey/install.js
 function install23(registers) {
   registers.registerChartView(SankeyView_default);
   registers.registerSeriesModel(SankeySeries_default);
@@ -19075,7 +19075,7 @@ function install23(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/whiskerBoxCommon.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/whiskerBoxCommon.js
 var WhiskerBoxCommonMixin = (
   /** @class */
   function() {
@@ -19154,7 +19154,7 @@ var WhiskerBoxCommonMixin = (
   }()
 );
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/BoxplotSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/BoxplotSeries.js
 var BoxplotSeriesModel = (
   /** @class */
   function(_super) {
@@ -19212,7 +19212,7 @@ var BoxplotSeriesModel = (
 mixin(BoxplotSeriesModel, WhiskerBoxCommonMixin, true);
 var BoxplotSeries_default = BoxplotSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/BoxplotView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/BoxplotView.js
 var BoxplotView = (
   /** @class */
   function(_super) {
@@ -19343,7 +19343,7 @@ function transInit(points3, dim, itemLayout) {
 }
 var BoxplotView_default = BoxplotView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/boxplotLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/boxplotLayout.js
 var each5 = each;
 function boxplotLayout(ecModel) {
   var groupResult = groupSeriesByAxis(ecModel);
@@ -19472,7 +19472,7 @@ function layoutSingleSeries(seriesModel, offset, boxWidth) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/prepareBoxplotData.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/prepareBoxplotData.js
 function prepareBoxplotData(rawData, opt) {
   opt = opt || {};
   var boxData = [];
@@ -19508,7 +19508,7 @@ function prepareBoxplotData(rawData, opt) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/boxplotTransform.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/boxplotTransform.js
 var boxplotTransform = {
   type: "echarts:boxplot",
   transform: function transform(params) {
@@ -19530,7 +19530,7 @@ var boxplotTransform = {
   }
 };
 
-// C:/Users/14276/node_modules/echarts/lib/chart/boxplot/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/boxplot/install.js
 function install24(registers) {
   registers.registerSeriesModel(BoxplotSeries_default);
   registers.registerChartView(BoxplotView_default);
@@ -19538,7 +19538,7 @@ function install24(registers) {
   registers.registerTransform(boxplotTransform);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/CandlestickView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/CandlestickView.js
 var SKIP_PROPS = ["color", "borderColor"];
 var CandlestickView = (
   /** @class */
@@ -19825,7 +19825,7 @@ function setLargeStyle(sign, el, seriesModel, data) {
 }
 var CandlestickView_default = CandlestickView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/CandlestickSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/CandlestickSeries.js
 var CandlestickSeriesModel = (
   /** @class */
   function(_super) {
@@ -19899,7 +19899,7 @@ var CandlestickSeriesModel = (
 mixin(CandlestickSeriesModel, WhiskerBoxCommonMixin, true);
 var CandlestickSeries_default = CandlestickSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/preprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/preprocessor.js
 function candlestickPreprocessor(option) {
   if (!option || !isArray(option.series)) {
     return;
@@ -19911,7 +19911,7 @@ function candlestickPreprocessor(option) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/candlestickVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/candlestickVisual.js
 var positiveBorderColorQuery = ["itemStyle", "borderColor"];
 var negativeBorderColorQuery = ["itemStyle", "borderColor0"];
 var dojiBorderColorQuery = ["itemStyle", "borderColorDoji"];
@@ -19951,7 +19951,7 @@ var candlestickVisual = {
 };
 var candlestickVisual_default = candlestickVisual;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/candlestickLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/candlestickLayout.js
 var candlestickLayout = {
   seriesType: "candlestick",
   plan: createRenderPlanner(),
@@ -20093,7 +20093,7 @@ function calculateCandleWidth(seriesModel, data) {
 }
 var candlestickLayout_default = candlestickLayout;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/candlestick/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/candlestick/install.js
 function install25(registers) {
   registers.registerChartView(CandlestickView_default);
   registers.registerSeriesModel(CandlestickSeries_default);
@@ -20102,7 +20102,7 @@ function install25(registers) {
   registers.registerLayout(candlestickLayout_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/EffectSymbol.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/EffectSymbol.js
 function updateRipplePath(rippleGroup, effectCfg) {
   var color = effectCfg.rippleEffectColor || effectCfg.color;
   rippleGroup.eachChild(function(ripplePath) {
@@ -20249,7 +20249,7 @@ var EffectSymbol = (
 );
 var EffectSymbol_default = EffectSymbol;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/effectScatter/EffectScatterView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/effectScatter/EffectScatterView.js
 var EffectScatterView = (
   /** @class */
   function(_super) {
@@ -20304,7 +20304,7 @@ var EffectScatterView = (
 );
 var EffectScatterView_default = EffectScatterView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/effectScatter/EffectScatterSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/effectScatter/EffectScatterSeries.js
 var EffectScatterSeriesModel = (
   /** @class */
   function(_super) {
@@ -20368,14 +20368,14 @@ var EffectScatterSeriesModel = (
 );
 var EffectScatterSeries_default = EffectScatterSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/effectScatter/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/effectScatter/install.js
 function install26(registers) {
   registers.registerChartView(EffectScatterView_default);
   registers.registerSeriesModel(EffectScatterSeries_default);
   registers.registerLayout(pointsLayout("effectScatter"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/EffectLine.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/EffectLine.js
 var EffectLine = (
   /** @class */
   function(_super) {
@@ -20525,7 +20525,7 @@ var EffectLine = (
 );
 var EffectLine_default = EffectLine;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/Polyline.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/Polyline.js
 var Polyline = (
   /** @class */
   function(_super) {
@@ -20590,7 +20590,7 @@ var Polyline = (
 );
 var Polyline_default2 = Polyline;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/EffectPolyline.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/EffectPolyline.js
 var EffectPolyline = (
   /** @class */
   function(_super) {
@@ -20674,7 +20674,7 @@ var EffectPolyline = (
 );
 var EffectPolyline_default = EffectPolyline;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/helper/LargeLineDraw.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/helper/LargeLineDraw.js
 var LargeLinesPathShape = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -20917,7 +20917,7 @@ var LargeLineDraw = (
 );
 var LargeLineDraw_default = LargeLineDraw;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/lines/linesLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/lines/linesLayout.js
 var linesLayout = {
   seriesType: "lines",
   plan: createRenderPlanner(),
@@ -20986,7 +20986,7 @@ var linesLayout = {
 };
 var linesLayout_default = linesLayout;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/lines/LinesView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/lines/LinesView.js
 var LinesView = (
   /** @class */
   function(_super) {
@@ -21112,7 +21112,7 @@ var LinesView = (
 );
 var LinesView_default = LinesView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/lines/LinesSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/lines/LinesSeries.js
 var Uint32Arr = typeof Uint32Array === "undefined" ? Array : Uint32Array;
 var Float64Arr = typeof Float64Array === "undefined" ? Array : Float64Array;
 function compatEc2(seriesOpt) {
@@ -21365,7 +21365,7 @@ var LinesSeriesModel = (
 );
 var LinesSeries_default = LinesSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/lines/linesVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/lines/linesVisual.js
 function normalize3(a) {
   if (!(a instanceof Array)) {
     a = [a, a];
@@ -21398,7 +21398,7 @@ var linesVisual = {
 };
 var linesVisual_default = linesVisual;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/lines/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/lines/install.js
 function install27(registers) {
   registers.registerChartView(LinesView_default);
   registers.registerSeriesModel(LinesSeries_default);
@@ -21406,7 +21406,7 @@ function install27(registers) {
   registers.registerVisual(linesVisual_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/heatmap/HeatmapLayer.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/heatmap/HeatmapLayer.js
 var GRADIENT_LEVELS = 256;
 var HeatmapLayer = (
   /** @class */
@@ -21505,7 +21505,7 @@ var HeatmapLayer = (
 );
 var HeatmapLayer_default = HeatmapLayer;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/heatmap/HeatmapView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/heatmap/HeatmapView.js
 function getIsInPiecewiseRange(dataExtent, pieceList, selected) {
   var dataSpan = dataExtent[1] - dataExtent[0];
   pieceList = map(pieceList, function(piece) {
@@ -21749,7 +21749,7 @@ var HeatmapView = (
 );
 var HeatmapView_default = HeatmapView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/heatmap/HeatmapSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/heatmap/HeatmapSeries.js
 var HeatmapSeriesModel = (
   /** @class */
   function(_super) {
@@ -21796,13 +21796,13 @@ var HeatmapSeriesModel = (
 );
 var HeatmapSeries_default = HeatmapSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/heatmap/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/heatmap/install.js
 function install28(registers) {
   registers.registerChartView(HeatmapView_default);
   registers.registerSeriesModel(HeatmapSeries_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/PictorialBarView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/PictorialBarView.js
 var BAR_BORDER_WIDTH_QUERY = ["itemStyle", "borderWidth"];
 var LAYOUT_ATTRS = [{
   xy: "x",
@@ -22341,7 +22341,7 @@ function toIntTimes(times) {
 }
 var PictorialBarView_default = PictorialBarView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/PictorialBarSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/PictorialBarSeries.js
 var PictorialBarSeriesModel = (
   /** @class */
   function(_super) {
@@ -22394,7 +22394,7 @@ var PictorialBarSeriesModel = (
 );
 var PictorialBarSeries_default = PictorialBarSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/bar/installPictorialBar.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/bar/installPictorialBar.js
 function install29(registers) {
   registers.registerChartView(PictorialBarView_default);
   registers.registerSeriesModel(PictorialBarSeries_default);
@@ -22402,7 +22402,7 @@ function install29(registers) {
   registers.registerLayout(registers.PRIORITY.VISUAL.PROGRESSIVE_LAYOUT, createProgressiveLayout("pictorialBar"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/themeRiver/ThemeRiverView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/themeRiver/ThemeRiverView.js
 var ThemeRiverView = (
   /** @class */
   function(_super) {
@@ -22537,7 +22537,7 @@ function createGridClipShape3(rect, seriesModel, cb) {
 }
 var ThemeRiverView_default = ThemeRiverView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/themeRiver/ThemeRiverSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/themeRiver/ThemeRiverSeries.js
 var DATA_NAME_INDEX = 2;
 var ThemeRiverSeriesModel = (
   /** @class */
@@ -22714,7 +22714,7 @@ var ThemeRiverSeriesModel = (
 );
 var ThemeRiverSeries_default = ThemeRiverSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/themeRiver/themeRiverLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/themeRiver/themeRiverLayout.js
 function themeRiverLayout(ecModel, api) {
   ecModel.eachSeriesByType("themeRiver", function(seriesModel) {
     var data = seriesModel.getData();
@@ -22811,7 +22811,7 @@ function computeBaseline(data) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/themeRiver/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/themeRiver/install.js
 function install30(registers) {
   registers.registerChartView(ThemeRiverView_default);
   registers.registerSeriesModel(ThemeRiverSeries_default);
@@ -22819,7 +22819,7 @@ function install30(registers) {
   registers.registerProcessor(dataFilter("themeRiver"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/SunburstPiece.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/SunburstPiece.js
 var DEFAULT_SECTOR_Z = 2;
 var DEFAULT_TEXT_Z = 4;
 var SunburstPiece = (
@@ -22987,7 +22987,7 @@ var SunburstPiece = (
 );
 var SunburstPiece_default = SunburstPiece;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/sunburstAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/sunburstAction.js
 var ROOT_TO_NODE_ACTION = "sunburstRootToNode";
 var HIGHLIGHT_ACTION = "sunburstHighlight";
 var UNHIGHLIGHT_ACTION = "sunburstUnhighlight";
@@ -23049,7 +23049,7 @@ function installSunburstAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/SunburstView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/SunburstView.js
 var SunburstView = (
   /** @class */
   function(_super) {
@@ -23188,7 +23188,7 @@ var SunburstView = (
 );
 var SunburstView_default = SunburstView;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/SunburstSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/SunburstSeries.js
 var SunburstSeriesModel = (
   /** @class */
   function(_super) {
@@ -23337,7 +23337,7 @@ function completeTreeValue2(dataNode) {
 }
 var SunburstSeries_default = SunburstSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/sunburstLayout.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/sunburstLayout.js
 var RADIAN3 = Math.PI / 180;
 function sunburstLayout(seriesType, ecModel, api) {
   ecModel.eachSeriesByType(seriesType, function(seriesModel) {
@@ -23481,7 +23481,7 @@ function sort2(children, sortOrder) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/sunburstVisual.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/sunburstVisual.js
 function sunburstVisual(ecModel) {
   var paletteScope = {};
   function pickColor(node, seriesModel, treeHeight) {
@@ -23510,7 +23510,7 @@ function sunburstVisual(ecModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/sunburst/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/sunburst/install.js
 function install31(registers) {
   registers.registerChartView(SunburstView_default);
   registers.registerSeriesModel(SunburstSeries_default);
@@ -23520,7 +23520,7 @@ function install31(registers) {
   installSunburstAction(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/custom/CustomSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/custom/CustomSeries.js
 var STYLE_VISUAL_TYPE = {
   color: "fill",
   borderColor: "stroke"
@@ -23580,7 +23580,7 @@ var CustomSeriesModel = (
 );
 var CustomSeries_default = CustomSeriesModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/cartesian/prepareCustom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/cartesian/prepareCustom.js
 function dataToCoordSize(dataSize, dataItem) {
   dataItem = dataItem || [0, 0];
   return map(["x", "y"], function(dim, dimIdx) {
@@ -23610,7 +23610,7 @@ function cartesianPrepareCustom(coordSys) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/geo/prepareCustom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/geo/prepareCustom.js
 function dataToCoordSize2(dataSize, dataItem) {
   dataItem = dataItem || [0, 0];
   return map([0, 1], function(dimIdx) {
@@ -23644,7 +23644,7 @@ function geoPrepareCustom(coordSys) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/prepareCustom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/prepareCustom.js
 function dataToCoordSize3(dataSize, dataItem) {
   var axis = this.getAxis();
   var val = dataItem instanceof Array ? dataItem[0] : dataItem;
@@ -23670,7 +23670,7 @@ function singlePrepareCustom(coordSys) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/prepareCustom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/prepareCustom.js
 function dataToCoordSize4(dataSize, dataItem) {
   dataItem = dataItem || [0, 0];
   return map(["Radius", "Angle"], function(dim, dimIdx) {
@@ -23711,7 +23711,7 @@ function polarPrepareCustom(coordSys) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/calendar/prepareCustom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/calendar/prepareCustom.js
 function calendarPrepareCustom(coordSys) {
   var rect = coordSys.getRect();
   var rangeInfo = coordSys.getRangeInfo();
@@ -23739,7 +23739,7 @@ function calendarPrepareCustom(coordSys) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/util/styleCompat.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/util/styleCompat.js
 var deprecatedLogs = {};
 function isEC4CompatibleStyle(style, elType, hasOwnTextContentOption, hasOwnTextConfig) {
   return style && (style.legacy || style.legacy !== false && !hasOwnTextContentOption && !hasOwnTextConfig && elType !== "tspan" && (elType === "text" || hasOwn(style, "text")));
@@ -23884,7 +23884,7 @@ function warnDeprecated(deprecated, insteadApproach) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/animation/customGraphicTransition.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/animation/customGraphicTransition.js
 var LEGACY_TRANSFORM_PROPS_MAP = {
   position: ["x", "y"],
   scale: ["scaleX", "scaleY"],
@@ -24258,7 +24258,7 @@ if (true) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/animation/customGraphicKeyframeAnimation.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/animation/customGraphicKeyframeAnimation.js
 var getStateToRestore = makeInner();
 var KEYFRAME_EXCLUDE_KEYS = ["percent", "easing", "shape", "style", "extra"];
 function stopPreviousKeyframeAnimationAndRestore(el) {
@@ -24342,7 +24342,7 @@ function applyKeyframeAnimation(el, animationOpts, animatableModel) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/custom/CustomView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/custom/CustomView.js
 var EMPHASIS = "emphasis";
 var NORMAL = "normal";
 var BLUR = "blur";
@@ -25009,19 +25009,19 @@ function hasOwnPathData(shape) {
   return shape && (hasOwn(shape, "pathData") || hasOwn(shape, "d"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/chart/custom/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/chart/custom/install.js
 function install32(registers) {
   registers.registerChartView(CustomView_default);
   registers.registerSeriesModel(CustomSeries_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/grid/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/grid/install.js
 function install33(registers) {
   use(install10);
-  use(install3);
+  use(install4);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/axisPointer/PolarAxisPointer.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axisPointer/PolarAxisPointer.js
 var PolarAxisPointer = (
   /** @class */
   function(_super) {
@@ -25121,7 +25121,7 @@ var pointerShapeBuilder = {
 };
 var PolarAxisPointer_default = PolarAxisPointer;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/PolarModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/PolarModel.js
 var PolarModel = (
   /** @class */
   function(_super) {
@@ -25154,7 +25154,7 @@ var PolarModel = (
 );
 var PolarModel_default = PolarModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/AxisModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/AxisModel.js
 var PolarAxisModel = (
   /** @class */
   function(_super) {
@@ -25197,7 +25197,7 @@ var RadiusAxisModel = (
   }(PolarAxisModel)
 );
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/RadiusAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/RadiusAxis.js
 var RadiusAxis = (
   /** @class */
   function(_super) {
@@ -25215,7 +25215,7 @@ RadiusAxis.prototype.dataToRadius = Axis_default.prototype.dataToCoord;
 RadiusAxis.prototype.radiusToData = Axis_default.prototype.coordToData;
 var RadiusAxis_default = RadiusAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/AngleAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/AngleAxis.js
 var inner5 = makeInner();
 var AngleAxis = (
   /** @class */
@@ -25262,7 +25262,7 @@ AngleAxis.prototype.dataToAngle = Axis_default.prototype.dataToCoord;
 AngleAxis.prototype.angleToData = Axis_default.prototype.coordToData;
 var AngleAxis_default = AngleAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/Polar.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/Polar.js
 var polarDimensions = ["radius", "angle"];
 var Polar = (
   /** @class */
@@ -25395,7 +25395,7 @@ function getCoordSys3(finder) {
 }
 var Polar_default = Polar;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/polar/polarCreator.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/polar/polarCreator.js
 function resizePolar(polar, polarModel, api) {
   var center2 = polarModel.get("center");
   var width = api.getWidth();
@@ -25491,7 +25491,7 @@ var polarCreator = {
 };
 var polarCreator_default = polarCreator;
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/AngleAxisView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/AngleAxisView.js
 var elementList2 = ["axisLine", "axisLabel", "axisTick", "minorTick", "splitLine", "minorSplitLine", "splitArea"];
 function getAxisLineShape(polar, rExtent, angle) {
   rExtent[1] > rExtent[0] && (rExtent = rExtent.slice().reverse());
@@ -25760,7 +25760,7 @@ var angelAxisElementsBuilders = {
 };
 var AngleAxisView_default = AngleAxisView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/RadiusAxisView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/RadiusAxisView.js
 var axisBuilderAttrs3 = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs2 = ["splitLine", "splitArea", "minorSplitLine"];
 var RadiusAxisView = (
@@ -25916,7 +25916,7 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 }
 var RadiusAxisView_default = RadiusAxisView;
 
-// C:/Users/14276/node_modules/echarts/lib/layout/barPolar.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/layout/barPolar.js
 function getSeriesStackId(seriesModel) {
   return seriesModel.get("stack") || "__ec_stack_" + seriesModel.seriesIndex;
 }
@@ -26109,7 +26109,7 @@ function calRadialBar(barSeries) {
 }
 var barPolar_default = barLayoutPolar;
 
-// C:/Users/14276/node_modules/echarts/lib/component/polar/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/polar/install.js
 var angleAxisExtraOption = {
   startAngle: 90,
   clockwise: true,
@@ -26135,7 +26135,7 @@ var PolarView = (
   }(Component_default2)
 );
 function install34(registers) {
-  use(install3);
+  use(install4);
   AxisView_default.registerAxisPointerClass("PolarAxisPointer", PolarAxisPointer_default);
   registers.registerCoordinateSystem("polar", polarCreator_default);
   registers.registerComponentModel(PolarModel_default);
@@ -26147,7 +26147,7 @@ function install34(registers) {
   registers.registerLayout(curry(barPolar_default, "bar"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/singleAxisHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/singleAxisHelper.js
 function layout3(axisModel, opt) {
   opt = opt || {};
   var single = axisModel.coordinateSystem;
@@ -26193,7 +26193,7 @@ function layout3(axisModel, opt) {
   return layout5;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/axis/SingleAxisView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axis/SingleAxisView.js
 var axisBuilderAttrs4 = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs3 = ["splitArea", "splitLine"];
 var SingleAxisView = (
@@ -26294,7 +26294,7 @@ var axisElementBuilders3 = {
 };
 var SingleAxisView_default = SingleAxisView;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/AxisModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/AxisModel.js
 var SingleAxisModel = (
   /** @class */
   function(_super) {
@@ -26355,7 +26355,7 @@ var SingleAxisModel = (
 mixin(SingleAxisModel, AxisModelCommonMixin.prototype);
 var AxisModel_default2 = SingleAxisModel;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/SingleAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/SingleAxis.js
 var SingleAxis = (
   /** @class */
   function(_super) {
@@ -26378,7 +26378,7 @@ var SingleAxis = (
 );
 var SingleAxis_default = SingleAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/Single.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/Single.js
 var singleDimensions = ["single"];
 var Single = (
   /** @class */
@@ -26515,7 +26515,7 @@ function getCoordSys4(finder) {
 }
 var Single_default = Single;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/single/singleCreator.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/single/singleCreator.js
 function create3(ecModel, api) {
   var singles = [];
   ecModel.eachComponent("singleAxis", function(axisModel, idx) {
@@ -26539,7 +26539,7 @@ var singleCreator = {
 };
 var singleCreator_default = singleCreator;
 
-// C:/Users/14276/node_modules/echarts/lib/component/axisPointer/SingleAxisPointer.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/axisPointer/SingleAxisPointer.js
 var XY = ["x", "y"];
 var WH = ["width", "height"];
 var SingleAxisPointer = (
@@ -26638,7 +26638,7 @@ function getGlobalExtent(coordSys, dimIndex) {
 }
 var SingleAxisPointer_default = SingleAxisPointer;
 
-// C:/Users/14276/node_modules/echarts/lib/component/singleAxis/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/singleAxis/install.js
 var SingleView = (
   /** @class */
   function(_super) {
@@ -26653,7 +26653,7 @@ var SingleView = (
   }(Component_default2)
 );
 function install35(registers) {
-  use(install3);
+  use(install4);
   AxisView_default.registerAxisPointerClass("SingleAxisPointer", SingleAxisPointer_default);
   registers.registerComponentView(SingleView);
   registers.registerComponentView(SingleAxisView_default);
@@ -26662,7 +26662,7 @@ function install35(registers) {
   registers.registerCoordinateSystem("single", singleCreator_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/coord/calendar/CalendarModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/calendar/CalendarModel.js
 var CalendarModel = (
   /** @class */
   function(_super) {
@@ -26768,7 +26768,7 @@ function mergeAndNormalizeLayoutParams(target, raw) {
 }
 var CalendarModel_default = CalendarModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/calendar/CalendarView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/calendar/CalendarView.js
 var CalendarView = (
   /** @class */
   function(_super) {
@@ -27091,7 +27091,7 @@ var CalendarView = (
 );
 var CalendarView_default = CalendarView;
 
-// C:/Users/14276/node_modules/echarts/lib/coord/calendar/Calendar.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/calendar/Calendar.js
 var PROXIMATE_ONE_DAY = 864e5;
 var Calendar = (
   /** @class */
@@ -27352,14 +27352,14 @@ function getCoordSys5(finder) {
 }
 var Calendar_default = Calendar;
 
-// C:/Users/14276/node_modules/echarts/lib/component/calendar/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/calendar/install.js
 function install36(registers) {
   registers.registerComponentModel(CalendarModel_default);
   registers.registerComponentView(CalendarView_default);
   registers.registerCoordinateSystem("calendar", Calendar_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/graphic/GraphicModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/graphic/GraphicModel.js
 function setKeyInfoToNewElOption(resultItem, newElOption) {
   var existElOption = resultItem.existing;
   newElOption.id = resultItem.keyInfo.id;
@@ -27520,7 +27520,7 @@ var GraphicComponentModel = (
   }(Component_default)
 );
 
-// C:/Users/14276/node_modules/echarts/lib/component/graphic/GraphicView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/graphic/GraphicView.js
 var nonShapeGraphicElements = {
   // Reserved but not supported in graphic component.
   path: null,
@@ -27818,7 +27818,7 @@ function setEventData(el, graphicModel, elOption) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/graphic/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/graphic/install.js
 function install37(registers) {
   registers.registerComponentModel(GraphicComponentModel);
   registers.registerComponentView(GraphicComponentView);
@@ -27840,7 +27840,7 @@ function install37(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/helper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/helper.js
 var DATA_ZOOM_AXIS_DIMENSIONS = ["x", "y", "radius", "angle", "single"];
 var SERIES_COORDS = ["cartesian2d", "polar", "singleAxis"];
 function isCoordSupported(seriesModel) {
@@ -27928,7 +27928,7 @@ function collectReferCoordSysModelInfo(dataZoomModel) {
   return coordSysInfoWrap;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/DataZoomModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/DataZoomModel.js
 var DataZoomAxisInfo = (
   /** @class */
   function() {
@@ -28222,7 +28222,7 @@ function retrieveRawOption(option) {
 }
 var DataZoomModel_default = DataZoomModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/SelectZoomModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/SelectZoomModel.js
 var SelectDataZoomModel = (
   /** @class */
   function(_super) {
@@ -28238,7 +28238,7 @@ var SelectDataZoomModel = (
 );
 var SelectZoomModel_default = SelectDataZoomModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/DataZoomView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/DataZoomView.js
 var DataZoomView = (
   /** @class */
   function(_super) {
@@ -28259,7 +28259,7 @@ var DataZoomView = (
 );
 var DataZoomView_default = DataZoomView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/SelectZoomView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/SelectZoomView.js
 var SelectDataZoomView = (
   /** @class */
   function(_super) {
@@ -28275,7 +28275,7 @@ var SelectDataZoomView = (
 );
 var SelectZoomView_default = SelectDataZoomView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/AxisProxy.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/AxisProxy.js
 var each6 = each;
 var asc2 = asc;
 var AxisProxy = (
@@ -28477,7 +28477,7 @@ function calculateDataExtent(axisProxy, axisDim, seriesModels) {
 }
 var AxisProxy_default = AxisProxy;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/dataZoomProcessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/dataZoomProcessor.js
 var dataZoomProcessor = {
   // `dataZoomProcessor` will only be performed in needed series. Consider if
   // there is a line series and a pie series, it is better not to update the
@@ -28538,7 +28538,7 @@ var dataZoomProcessor = {
 };
 var dataZoomProcessor_default = dataZoomProcessor;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/dataZoomAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/dataZoomAction.js
 function installDataZoomAction(registers) {
   registers.registerAction("dataZoom", function(payload, ecModel) {
     var effectedModels = findEffectedDataZooms(ecModel, payload);
@@ -28553,7 +28553,7 @@ function installDataZoomAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/installCommon.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/installCommon.js
 var installed = false;
 function installCommon(registers) {
   if (installed) {
@@ -28567,14 +28567,14 @@ function installCommon(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/installDataZoomSelect.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/installDataZoomSelect.js
 function install38(registers) {
   registers.registerComponentModel(SelectZoomModel_default);
   registers.registerComponentView(SelectZoomView_default);
   installCommon(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/featureManager.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/featureManager.js
 var ToolboxFeature = (
   /** @class */
   /* @__PURE__ */ function() {
@@ -28591,7 +28591,7 @@ function getFeature(name) {
   return features[name];
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/ToolboxModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/ToolboxModel.js
 var ToolboxModel = (
   /** @class */
   function(_super) {
@@ -28657,7 +28657,7 @@ var ToolboxModel = (
 );
 var ToolboxModel_default = ToolboxModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/listComponent.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/listComponent.js
 function layout4(group, componentModel, api) {
   var boxLayoutParams = componentModel.getBoxLayoutParams();
   var padding = componentModel.get("padding");
@@ -28688,7 +28688,7 @@ function makeBackground(rect, componentModel) {
   return rect;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/ToolboxView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/ToolboxView.js
 var ToolboxView = (
   /** @class */
   function(_super) {
@@ -28904,7 +28904,7 @@ function isUserFeatureName(featureName) {
 }
 var ToolboxView_default = ToolboxView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/SaveAsImage.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/SaveAsImage.js
 var SaveAsImage = (
   /** @class */
   function(_super) {
@@ -28995,7 +28995,7 @@ var SaveAsImage = (
 );
 var SaveAsImage_default = SaveAsImage;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/MagicType.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/MagicType.js
 var INNER_STACK_KEYWORD = "__ec_magicType_stack__";
 var radioTypes = [["line", "bar"], ["stack"]];
 var MagicType = (
@@ -29151,7 +29151,7 @@ registerAction({
 });
 var MagicType_default = MagicType;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/DataView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/DataView.js
 var BLOCK_SPLITER = new Array(60).join("-");
 var ITEM_SPLITER = "	";
 function groupSeries(ecModel) {
@@ -29512,7 +29512,7 @@ registerAction({
 });
 var DataView_default = DataView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/history.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/history.js
 var each7 = each;
 var inner7 = makeInner();
 function push(ecModel, newSnapshot) {
@@ -29573,7 +29573,7 @@ function getStoreSnapshots(ecModel) {
   return store.snapshots;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/Restore.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/Restore.js
 var RestoreOption = (
   /** @class */
   function(_super) {
@@ -29609,7 +29609,7 @@ registerAction({
 });
 var Restore_default = RestoreOption;
 
-// C:/Users/14276/node_modules/echarts/lib/component/helper/BrushTargetManager.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/helper/BrushTargetManager.js
 var INCLUDE_FINDER_MAIN_TYPES = ["grid", "xAxis", "yAxis", "geo", "graph", "polar", "radiusAxis", "angleAxis", "bmap"];
 var BrushTargetManager = (
   /** @class */
@@ -29873,7 +29873,7 @@ function getSize2(xyMinMax) {
 }
 var BrushTargetManager_default = BrushTargetManager;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/DataZoom.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/DataZoom.js
 var each8 = each;
 var DATA_ZOOM_ID_BASE = makeInternalComponentId("toolbox-dataZoom_");
 var DataZoomFeature = (
@@ -30069,7 +30069,7 @@ registerInternalOptionCreator("dataZoom", function(ecModel) {
 });
 var DataZoom_default = DataZoomFeature;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/install.js
 function install39(registers) {
   registers.registerComponentModel(ToolboxModel_default);
   registers.registerComponentView(ToolboxView_default);
@@ -30081,7 +30081,7 @@ function install39(registers) {
   use(install38);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/preprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/preprocessor.js
 var DEFAULT_TOOLBOX_BTNS = ["rect", "polygon", "keep", "clear"];
 function brushPreprocessor(option, isNew) {
   var brushComponents = normalizeToArray(option ? option.brush : []);
@@ -30125,7 +30125,7 @@ function removeDuplicate(arr) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/visual/visualSolution.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/visual/visualSolution.js
 var each9 = each;
 function hasKeys(obj) {
   if (obj) {
@@ -30252,7 +30252,7 @@ function incrementalApplyVisual(stateList, visualMappings, getValueState, dim) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/selector.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/selector.js
 function makeBrushCommonSelectorForSeries(area) {
   var brushType = area.brushType;
   var selectors = {
@@ -30321,7 +30321,7 @@ function inLineRange(p, range) {
   return range[0] <= p && p <= range[1];
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/visualEncoding.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/visualEncoding.js
 var STATE_LIST = ["inBrush", "outOfBrush"];
 var DISPATCH_METHOD = "__ecBrushSelect";
 var DISPATCH_FLAG = "__ecInBrushSelectEvent";
@@ -30495,7 +30495,7 @@ function getBoundingRectFromMinMax(minMax) {
   return new BoundingRect_default(minMax[0][0], minMax[1][0], minMax[0][1] - minMax[0][0], minMax[1][1] - minMax[1][0]);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/BrushView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/BrushView.js
 var BrushView = (
   /** @class */
   function(_super) {
@@ -30553,7 +30553,7 @@ var BrushView = (
 );
 var BrushView_default = BrushView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/BrushModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/BrushModel.js
 var DEFAULT_OUT_OF_BRUSH_COLOR = "#ddd";
 var BrushModel = (
   /** @class */
@@ -30627,7 +30627,7 @@ function generateBrushOption(option, brushOption) {
 }
 var BrushModel_default = BrushModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/toolbox/feature/Brush.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/toolbox/feature/Brush.js
 var ICON_TYPES = ["rect", "polygon", "lineX", "lineY", "keep", "clear"];
 var BrushFeature = (
   /** @class */
@@ -30719,7 +30719,7 @@ var BrushFeature = (
 );
 var Brush_default = BrushFeature;
 
-// C:/Users/14276/node_modules/echarts/lib/component/brush/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/brush/install.js
 function install40(registers) {
   registers.registerComponentView(BrushView_default);
   registers.registerComponentModel(BrushModel_default);
@@ -30750,7 +30750,7 @@ function install40(registers) {
   registerFeature("brush", Brush_default);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/TimelineModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/TimelineModel.js
 var TimelineModel = (
   /** @class */
   function(_super) {
@@ -30867,7 +30867,7 @@ var TimelineModel = (
 );
 var TimelineModel_default = TimelineModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/SliderTimelineModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/SliderTimelineModel.js
 var SliderTimelineModel = (
   /** @class */
   function(_super) {
@@ -30980,7 +30980,7 @@ var SliderTimelineModel = (
 mixin(SliderTimelineModel, DataFormatMixin.prototype);
 var SliderTimelineModel_default = SliderTimelineModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/TimelineView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/TimelineView.js
 var TimelineView = (
   /** @class */
   function(_super) {
@@ -30996,7 +30996,7 @@ var TimelineView = (
 );
 var TimelineView_default = TimelineView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/TimelineAxis.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/TimelineAxis.js
 var TimelineAxis = (
   /** @class */
   function(_super) {
@@ -31017,7 +31017,7 @@ var TimelineAxis = (
 );
 var TimelineAxis_default = TimelineAxis;
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/SliderTimelineView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/SliderTimelineView.js
 var PI5 = Math.PI;
 var labelDataIndexStore = makeInner();
 var SliderTimelineView = (
@@ -31569,7 +31569,7 @@ function pointerMoveTo(pointer, progressLine, dataIndex, axis, timelineModel, no
 }
 var SliderTimelineView_default = SliderTimelineView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/timelineAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/timelineAction.js
 function installTimelineAction(registers) {
   registers.registerAction({
     type: "timelineChange",
@@ -31607,7 +31607,7 @@ function installTimelineAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/preprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/preprocessor.js
 function timelinePreprocessor(option) {
   var timelineOpt = option && option.timeline;
   if (!isArray(timelineOpt)) {
@@ -31674,7 +31674,7 @@ function has(obj, attr) {
   return obj.hasOwnProperty(attr);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/timeline/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/timeline/install.js
 function install41(registers) {
   registers.registerComponentModel(SliderTimelineModel_default);
   registers.registerComponentView(SliderTimelineView_default);
@@ -31685,7 +31685,7 @@ function install41(registers) {
   registers.registerPreprocessor(timelinePreprocessor);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/checkMarkerInSeries.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/checkMarkerInSeries.js
 function checkMarkerInSeries(seriesOpts, markerType) {
   if (!seriesOpts) {
     return false;
@@ -31699,7 +31699,7 @@ function checkMarkerInSeries(seriesOpts, markerType) {
   return false;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkerModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkerModel.js
 function fillLabel(opt) {
   defaultEmphasis(opt, "label", ["show"]);
 }
@@ -31812,7 +31812,7 @@ var MarkerModel = (
 mixin(MarkerModel, DataFormatMixin.prototype);
 var MarkerModel_default = MarkerModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkPointModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkPointModel.js
 var MarkPointModel = (
   /** @class */
   function(_super) {
@@ -31854,7 +31854,7 @@ var MarkPointModel = (
 );
 var MarkPointModel_default = MarkPointModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/markerHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/markerHelper.js
 function hasXOrY(item) {
   return !(isNaN(parseFloat(item.x)) && isNaN(parseFloat(item.y)));
 }
@@ -31970,7 +31970,7 @@ function numCalculate(data, valueDataDim, type) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkerView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkerView.js
 var inner9 = makeInner();
 var MarkerView = (
   /** @class */
@@ -32021,7 +32021,7 @@ var MarkerView = (
 );
 var MarkerView_default = MarkerView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkPointView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkPointView.js
 function updateMarkerLayout(mpData, seriesModel, api) {
   var coordSys = seriesModel.coordinateSystem;
   mpData.each(function(idx) {
@@ -32153,7 +32153,7 @@ function createData(coordSys, seriesModel, mpModel) {
 }
 var MarkPointView_default = MarkPointView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/installMarkPoint.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/installMarkPoint.js
 function install42(registers) {
   registers.registerComponentModel(MarkPointModel_default);
   registers.registerComponentView(MarkPointView_default);
@@ -32164,7 +32164,7 @@ function install42(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkLineModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkLineModel.js
 var MarkLineModel = (
   /** @class */
   function(_super) {
@@ -32212,7 +32212,7 @@ var MarkLineModel = (
 );
 var MarkLineModel_default = MarkLineModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkLineView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkLineView.js
 var inner10 = makeInner();
 var markLineTransform = function(seriesModel, coordSys, mlModel, item) {
   var data = seriesModel.getData();
@@ -32477,7 +32477,7 @@ function createList(coordSys, seriesModel, mlModel) {
 }
 var MarkLineView_default = MarkLineView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/installMarkLine.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/installMarkLine.js
 function install43(registers) {
   registers.registerComponentModel(MarkLineModel_default);
   registers.registerComponentView(MarkLineView_default);
@@ -32488,7 +32488,7 @@ function install43(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkAreaModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkAreaModel.js
 var MarkAreaModel = (
   /** @class */
   function(_super) {
@@ -32533,7 +32533,7 @@ var MarkAreaModel = (
 );
 var MarkAreaModel_default = MarkAreaModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/MarkAreaView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/MarkAreaView.js
 var inner11 = makeInner();
 var markAreaTransform = function(seriesModel, coordSys, maModel, item) {
   var item0 = item[0];
@@ -32809,7 +32809,7 @@ function createList2(coordSys, seriesModel, maModel) {
 }
 var MarkAreaView_default = MarkAreaView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/marker/installMarkArea.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/marker/installMarkArea.js
 function install44(registers) {
   registers.registerComponentModel(MarkAreaModel_default);
   registers.registerComponentView(MarkAreaView_default);
@@ -32820,7 +32820,7 @@ function install44(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/LegendModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/LegendModel.js
 var getDefaultSelectorOptions = function(ecModel, type) {
   if (type === "all") {
     return {
@@ -33076,7 +33076,7 @@ var LegendModel = (
 );
 var LegendModel_default = LegendModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/LegendView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/LegendView.js
 var curry2 = curry;
 var each10 = each;
 var Group2 = Group_default;
@@ -33483,7 +33483,7 @@ function dispatchDownplayAction(seriesName, dataName, api, excludeSeriesId) {
 }
 var LegendView_default = LegendView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/legendFilter.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/legendFilter.js
 function legendFilter(ecModel) {
   var legendModels = ecModel.findComponents({
     mainType: "legend"
@@ -33500,7 +33500,7 @@ function legendFilter(ecModel) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/legendAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/legendAction.js
 function legendSelectActionHandler(methodName, payload, ecModel) {
   var selectedMap = {};
   var isToggleSelect = methodName === "toggleSelected";
@@ -33543,7 +33543,7 @@ function installLegendAction(registers) {
   registers.registerAction("legendUnSelect", "legendunselected", curry(legendSelectActionHandler, "unSelect"));
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/installLegendPlain.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/installLegendPlain.js
 function install45(registers) {
   registers.registerComponentModel(LegendModel_default);
   registers.registerComponentView(LegendView_default);
@@ -33554,7 +33554,7 @@ function install45(registers) {
   installLegendAction(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/ScrollableLegendModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/ScrollableLegendModel.js
 var ScrollableLegendModel = (
   /** @class */
   function(_super) {
@@ -33609,7 +33609,7 @@ function mergeAndNormalizeLayoutParams2(legendModel, target, raw) {
 }
 var ScrollableLegendModel_default = ScrollableLegendModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/ScrollableLegendView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/ScrollableLegendView.js
 var Group3 = Group_default;
 var WH2 = ["width", "height"];
 var XY2 = ["x", "y"];
@@ -33913,7 +33913,7 @@ var ScrollableLegendView = (
 );
 var ScrollableLegendView_default = ScrollableLegendView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/scrollableLegendAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/scrollableLegendAction.js
 function installScrollableLegendAction(registers) {
   registers.registerAction("legendScroll", "legendscroll", function(payload, ecModel) {
     var scrollDataIndex = payload.scrollDataIndex;
@@ -33927,7 +33927,7 @@ function installScrollableLegendAction(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/installLegendScroll.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/installLegendScroll.js
 function install46(registers) {
   use(install45);
   registers.registerComponentModel(ScrollableLegendModel_default);
@@ -33935,13 +33935,13 @@ function install46(registers) {
   installScrollableLegendAction(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/legend/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/legend/install.js
 function install47(registers) {
   use(install45);
   use(install46);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/InsideZoomModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/InsideZoomModel.js
 var InsideZoomModel = (
   /** @class */
   function(_super) {
@@ -33965,7 +33965,7 @@ var InsideZoomModel = (
 );
 var InsideZoomModel_default = InsideZoomModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/roams.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/roams.js
 var inner12 = makeInner();
 function setViewInfoToCoordSysRecord(api, dataZoomModel, getRange) {
   inner12(api).coordSysRecordMap.each(function(coordSysRecord) {
@@ -34121,7 +34121,7 @@ function installDataZoomRoamProcessor(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/InsideZoomView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/InsideZoomView.js
 var InsideZoomView = (
   /** @class */
   function(_super) {
@@ -34262,7 +34262,7 @@ var getDirectionInfo = {
 };
 var InsideZoomView_default = InsideZoomView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/installDataZoomInside.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/installDataZoomInside.js
 function install48(registers) {
   installCommon(registers);
   registers.registerComponentModel(InsideZoomModel_default);
@@ -34270,7 +34270,7 @@ function install48(registers) {
   installDataZoomRoamProcessor(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/SliderZoomModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/SliderZoomModel.js
 var SliderZoomModel = (
   /** @class */
   function(_super) {
@@ -34355,7 +34355,7 @@ var SliderZoomModel = (
 );
 var SliderZoomModel_default = SliderZoomModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/SliderZoomView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/SliderZoomView.js
 var Rect2 = Rect_default;
 var DEFAULT_LOCATION_EDGE_GAP = 7;
 var DEFAULT_FRAME_BORDER_WIDTH = 1;
@@ -35048,20 +35048,20 @@ function getCursor(orient) {
 }
 var SliderZoomView_default = SliderZoomView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/installDataZoomSlider.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/installDataZoomSlider.js
 function install49(registers) {
   registers.registerComponentModel(SliderZoomModel_default);
   registers.registerComponentView(SliderZoomView_default);
   installCommon(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/dataZoom/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/dataZoom/install.js
 function install50(registers) {
   use(install48);
   use(install49);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/visual/visualDefault.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/visual/visualDefault.js
 var visualDefault = {
   /**
    * @public
@@ -35107,7 +35107,7 @@ var defaultOption2 = {
 };
 var visualDefault_default = visualDefault;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/VisualMapModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/VisualMapModel.js
 var mapVisual2 = VisualMapping_default.mapVisual;
 var eachVisual = VisualMapping_default.eachVisual;
 var isArray2 = isArray;
@@ -35366,7 +35366,7 @@ var VisualMapModel = (
 );
 var VisualMapModel_default = VisualMapModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/ContinuousModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/ContinuousModel.js
 var DEFAULT_BAR_BOUND = [20, 140];
 var ContinuousModel = (
   /** @class */
@@ -35537,7 +35537,7 @@ function getColorStopValues(visualMapModel, valueState, dataExtent) {
 }
 var ContinuousModel_default = ContinuousModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/VisualMapView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/VisualMapView.js
 var VisualMapView = (
   /** @class */
   function(_super) {
@@ -35630,7 +35630,7 @@ var VisualMapView = (
 );
 var VisualMapView_default = VisualMapView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/helper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/helper.js
 var paramsSet = [["left", "right", "width"], ["top", "bottom", "height"]];
 function getItemAlign(visualMapModel, api, itemSize) {
   var modelOption = visualMapModel.option;
@@ -35665,7 +35665,7 @@ function makeHighDownBatch(batch, visualMapModel) {
   return batch;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/ContinuousView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/ContinuousView.js
 var linearMap3 = linearMap;
 var each12 = each;
 var mathMin5 = Math.min;
@@ -36239,7 +36239,7 @@ function getCursor2(orient) {
 }
 var ContinuousView_default = ContinuousView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/visualMapAction.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/visualMapAction.js
 var visualMapActionInfo = {
   type: "selectDataRange",
   event: "dataRangeSelected",
@@ -36255,7 +36255,7 @@ var visualMapActionHander = function(payload, ecModel) {
   });
 };
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/visualEncoding.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/visualEncoding.js
 var visualMapEncodingHandlers = [
   {
     createOnAllSeries: true,
@@ -36315,7 +36315,7 @@ function getColorVisual(seriesModel, visualMapModel, value, valueState) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/preprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/preprocessor.js
 var each13 = each;
 function visualMapPreprocessor(option) {
   var visualMap = option && option.visualMap;
@@ -36349,7 +36349,7 @@ function has2(obj, name) {
   return obj && obj.hasOwnProperty && obj.hasOwnProperty(name);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/installCommon.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/installCommon.js
 var installed2 = false;
 function installCommon2(registers) {
   if (installed2) {
@@ -36366,14 +36366,14 @@ function installCommon2(registers) {
   registers.registerPreprocessor(visualMapPreprocessor);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/installVisualMapContinuous.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/installVisualMapContinuous.js
 function install51(registers) {
   registers.registerComponentModel(ContinuousModel_default);
   registers.registerComponentView(ContinuousView_default);
   installCommon2(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/PiecewiseModel.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/PiecewiseModel.js
 var PiecewiseModel = (
   /** @class */
   function(_super) {
@@ -36699,7 +36699,7 @@ function normalizeReverse(thisOption, pieceList) {
 }
 var PiecewiseModel_default = PiecewiseModel;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/PiecewiseView.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/PiecewiseView.js
 var PiecewiseVisualMapView = (
   /** @class */
   function(_super) {
@@ -36860,20 +36860,20 @@ var PiecewiseVisualMapView = (
 );
 var PiecewiseView_default = PiecewiseVisualMapView;
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/installVisualMapPiecewise.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/installVisualMapPiecewise.js
 function install52(registers) {
   registers.registerComponentModel(PiecewiseModel_default);
   registers.registerComponentView(PiecewiseView_default);
   installCommon2(registers);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/visualMap/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/visualMap/install.js
 function install53(registers) {
   use(install51);
   use(install52);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/visual/aria.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/visual/aria.js
 var DEFAULT_OPTION = {
   label: {
     enabled: true
@@ -37053,7 +37053,7 @@ function ariaVisual(ecModel, api) {
   }
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/aria/preprocessor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/aria/preprocessor.js
 function ariaPreprocessor(option) {
   if (!option || !option.aria) {
     return;
@@ -37070,13 +37070,13 @@ function ariaPreprocessor(option) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/aria/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/aria/install.js
 function install54(registers) {
   registers.registerPreprocessor(ariaPreprocessor);
   registers.registerVisual(registers.PRIORITY.VISUAL.ARIA, ariaVisual);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/util/conditionalExpression.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/util/conditionalExpression.js
 var RELATIONAL_EXPRESSION_OP_ALIAS_MAP = {
   value: "eq",
   // PENDING: not good for literal semantic?
@@ -37308,7 +37308,7 @@ function parseConditionalExpression(exprOption, getters) {
   return new ConditionalExpressionParsed(exprOption, getters);
 }
 
-// C:/Users/14276/node_modules/echarts/lib/component/transform/filterTransform.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/transform/filterTransform.js
 var filterTransform = {
   type: "echarts:filter",
   // PENDING: enhance to filter by index rather than create new data
@@ -37356,7 +37356,7 @@ var filterTransform = {
   }
 };
 
-// C:/Users/14276/node_modules/echarts/lib/component/transform/sortTransform.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/transform/sortTransform.js
 var sampleLog = "";
 if (true) {
   sampleLog = ["Valid config is like:", '{ dimension: "age", order: "asc" }', 'or [{ dimension: "age", order: "asc"], { dimension: "date", order: "desc" }]'].join(" ");
@@ -37459,13 +37459,13 @@ var sortTransform = {
   }
 };
 
-// C:/Users/14276/node_modules/echarts/lib/component/transform/install.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/component/transform/install.js
 function install55(registers) {
   registers.registerTransform(filterTransform);
   registers.registerTransform(sortTransform);
 }
 
-// C:/Users/14276/node_modules/zrender/lib/tool/convertPath.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/tool/convertPath.js
 var CMD = PathProxy_default.CMD;
 function aroundEqual(a, b) {
   return Math.abs(a - b) < 1e-5;
@@ -37659,7 +37659,7 @@ function pathToPolygons(path, scale3) {
   return polygons;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/tool/dividePath.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/tool/dividePath.js
 function getDividingGrids(dimSize, rowDim, count2) {
   var rowSize = dimSize[rowDim];
   var columnSize = dimSize[1 - rowDim];
@@ -37965,7 +37965,7 @@ function split(path, count2) {
   return out;
 }
 
-// C:/Users/14276/node_modules/zrender/lib/tool/morphPath.js
+// E:/竞赛/poetryworld/node_modules/zrender/lib/tool/morphPath.js
 function alignSubpath(subpath1, subpath2) {
   var len1 = subpath1.length;
   var len2 = subpath2.length;
@@ -38544,7 +38544,7 @@ function separateMorph(fromPath, toPathList, animationOpts) {
   };
 }
 
-// C:/Users/14276/node_modules/echarts/lib/animation/morphTransitionHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/animation/morphTransitionHelper.js
 function isMultiple(elements) {
   return isArray(elements[0]);
 }
@@ -38689,7 +38689,7 @@ function getPathList(elements) {
   return pathList;
 }
 
-// C:/Users/14276/node_modules/echarts/lib/animation/universalTransition.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/animation/universalTransition.js
 var DATA_COUNT_THRESHOLD = 1e4;
 var TRANSITION_NONE = 0;
 var TRANSITION_P2C = 1;
@@ -39192,10 +39192,10 @@ function installUniversalTransition(registers) {
   });
 }
 
-// C:/Users/14276/node_modules/echarts/index.js
+// E:/竞赛/poetryworld/node_modules/echarts/index.js
 use([install]);
 use([install7]);
-use([install6, install8, install9, install11, install13, install15, install16, install17, install18, install19, install20, install22, install23, install24, install25, install26, install27, install28, install29, install30, install31, install32]);
+use([install3, install8, install9, install11, install13, install15, install16, install17, install18, install19, install20, install22, install23, install24, install25, install26, install27, install28, install29, install30, install31, install32]);
 use(install33);
 use(install34);
 use(install14);
@@ -39204,10 +39204,10 @@ use(install21);
 use(install36);
 use(install37);
 use(install39);
-use(install4);
-use(install3);
-use(install40);
 use(install5);
+use(install4);
+use(install40);
+use(install6);
 use(install41);
 use(install42);
 use(install43);
