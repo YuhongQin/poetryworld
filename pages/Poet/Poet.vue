@@ -15,8 +15,8 @@
 			<!-- 头部开始（搜索&复选框）-->
 			<view class="poet-head">	
 				<view class="search-bar">
-					<input style="backgroundColor: #fff;" type="text" placeholder="请输入诗人名称" @input="onSearchPoet" />
-					<button style="backgroundColor: #fff;" @click="getPoetData">搜索</button>
+					<input class="search-button" type="text" placeholder="请输入诗人名称" @input="onSearchPoet" />
+					<button class="search-button" @click="getPoetData">搜索</button>
 				</view>
 				
 				<view class="poet-title" style="font-size: 40rpx ; margin: 20rpx 16rpx">朝代选择</view>
@@ -30,6 +30,7 @@
 				</view>
 			</view>
 			<!-- 内容0 头部内容结束 -->
+			
 			<!-- 内容0 body部分开始 -->
 			<view class="poet-body">
 				<view v-for="(item,index) in poetData"  :key="index" class="container" >
@@ -44,6 +45,7 @@
 					</view>
 				</view>
 			</view>
+			
 			<!-- 内容0 body部分结束 -->
 			<view class="BtnContainer" v-if="btnShow === true">
 				<button class="PrevBtn" @click="prevPage">上一页</button>
@@ -579,4 +581,14 @@
 	.uni-select {
 		background-color: #fff
 	}
+	.search-button {
+	  background-color: #fff;
+	  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	}
+	
+	.search-button:hover {
+	  /* 鼠标悬停时的效果，可以加深阴影或改变颜色 */
+	  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 4px;
+	}
+
 </style>
