@@ -2,10 +2,15 @@
 	<view>  
 		<view class="bg-set">  
 			<view class="DM-head">  
-				<swiper circular indicator-dots :autoplay='true' :interval='3000' :duration='300'>  
-					<swiper-item v-for="(item, index) in swipers" :key="index">  
-						<image :src="item"></image>  
-					</swiper-item>  
+				    <swiper 
+				      circular 
+				      indicator-dots 
+				      :autoplay="true" 
+				      :interval="3000" 
+				      :duration="300">
+				      <swiper-item v-for="(item, index) in swipers" :key="index">
+				        <image :src="item"></image>
+				      </swiper-item> 
 				</swiper>  
 			</view>  
 			<view class="grid-list">  
@@ -27,9 +32,9 @@ export default {
 	data() {  
 		return {  
 			swipers: [  
-				'https://img-blog.csdnimg.cn/img_convert/ec13b1d884b422ad6ac1746504fa0454.png',  
-				'https://img-blog.csdnimg.cn/img_convert/462ba175388a6005201d8a73f186c527.png',  
-				'https://img-blog.csdnimg.cn/img_convert/213a362a143bd47b8b4e3dad5138d53d.png',  
+				'./ec13b1d884b422ad6ac1746504fa0454.png',  
+				'./462ba175388a6005201d8a73f186c527.jpg',  
+				'./213a362a143bd47b8b4e3dad5138d53d.jpg',  
 			],  
 			gridList: [  
 				{ url: '/static/dataMining/text.png', text: '常用字分析', badge: '0' },  
@@ -39,7 +44,7 @@ export default {
 				{ url: '/static/dataMining/season.png', text: '季节统计分析', badge: '4' },  
 				{ url: '/static/dataMining/network.png', text: '全朝代关系网络', badge: '5' },  
 				{ url: '/static/dataMining/knowledge.png', text: '知识图谱', badge: '6' },  
-				{ url: '/static/dataMining/influence.png', text: '人物影响力', badge: '7' },  
+				{ url: '/static/dataMining/influence.png', text: '古文翻译', badge: '7' },  
 				{ url: '/static/dataMining/books.png', text: '古籍数据', badge: '8' }  
 			]  
 		}  
@@ -72,8 +77,11 @@ export default {
 						url: "/pages/knowledge/poetry/poetry"  
 					});  
 					break;  
-				case 7: // 人物影响力  
-					// Add custom navigation if needed  
+				case 7: // 古文翻译  
+					// Add custom navigation if needed
+					  uni.navigateTo({
+					  	url: "/pages/translate/translate"  
+					  }); 
 					break;  
 				case 8: // 古籍数据  
 					// Add custom navigation if needed  

@@ -9,9 +9,9 @@ import {
   getLayoutRect,
   retrieve2,
   windowOpen
-} from "./chunk-QINJRSWT.js";
+} from "./chunk-RRA2ZF5S.js";
 
-// E:/竞赛/poetryworld/node_modules/echarts/lib/component/title/install.js
+// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/component/title/install.js
 var TitleModel = (
   /** @class */
   function(_super) {
@@ -186,4 +186,4 @@ function install(registers) {
 export {
   install
 };
-//# sourceMappingURL=chunk-OCIHAXV5.js.map
+//# sourceMappingURL=chunk-EBWXBOEB.js.map

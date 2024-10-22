@@ -1,6 +1,6 @@
 import "./chunk-F5QR3K72.js";
 
-// E:/竞赛/poetryworld/node_modules/js-cookie/dist/js.cookie.mjs
+// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/js-cookie/dist/js.cookie.mjs
 function assign(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
