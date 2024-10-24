@@ -59,15 +59,27 @@ export default {
 					break;  
 				case 1: // 常用词分析  
 					// Add custom navigation if needed  
+					uni.navigateTo({
+						url:"/pages/Word/Word",
+					})
 					break;  
 				case 2: // 颜色统计分析  
-					// Add custom navigation if needed  
+					// Add custom navigation if needed 
+					 uni.navigateTo({
+					 	url:"/pages/Color/Color",
+					 })
 					break;  
 				case 3: // 意象统计分析  
-					// Add custom navigation if needed  
+					// Add custom navigation if needed 
+					 uni.navigateTo({
+					 	url:"/pages/Imagery/Imagery",
+					 })
 					break;  
 				case 4: // 季节统计分析  
-					// Add custom navigation if needed  
+					// Add custom navigation if needed
+					  uni.navigateTo({
+					  	url:"/pages/Season/Season",
+					  })
 					break;  
 				case 5: // 全朝代关系网络  
 					// Add custom navigation if needed  

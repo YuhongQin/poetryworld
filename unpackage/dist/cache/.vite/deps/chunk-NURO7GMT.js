@@ -5,7 +5,7 @@ import {
   ensureSourceDimNameMap,
   isSeriesDataSchema,
   shouldOmitUnusedDimensions
-} from "./chunk-TFBRQ3IM.js";
+} from "./chunk-GO2JNPCO.js";
 import {
   BE_ORDINAL,
   CoordinateSystem_default,
@@ -44,7 +44,7 @@ import {
   retrieve,
   setCommonECData,
   slice
-} from "./chunk-QJRVK6RT.js";
+} from "./chunk-RRA2ZF5S.js";
 
 // C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/DataDiffer.js
 function dataIndexMapValueLength(valNumOrArrLengthMoreThan2) {
@@ -973,6 +973,9 @@ var SeriesData = (
 var SeriesData_default = SeriesData;
 
 // C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/helper/createDimensions.js
+function createDimensions(source, opt) {
+  return prepareSeriesDataSchema(source, opt).dimensions;
+}
 function prepareSeriesDataSchema(source, opt) {
   if (!isSourceInstance(source)) {
     source = createSourceFromSeriesDataOption(source);
@@ -1389,6 +1392,11 @@ function firstDataNotNull(arr) {
 var createSeriesData_default = createSeriesData;
 
 export {
+  DataDiffer_default,
+  getDimensionTypeByAxis,
+  SeriesData_default,
+  createDimensions,
+  prepareSeriesDataSchema,
   createSeriesData_default
 };
-//# sourceMappingURL=chunk-3Y73X4AW.js.map
+//# sourceMappingURL=chunk-NURO7GMT.js.map

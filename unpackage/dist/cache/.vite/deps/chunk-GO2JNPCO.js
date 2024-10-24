@@ -7,7 +7,7 @@ import {
   makeInner,
   retrieve2,
   shouldRetrieveDataByName
-} from "./chunk-QJRVK6RT.js";
+} from "./chunk-RRA2ZF5S.js";
 
 // C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/helper/SeriesDataSchema.js
 var inner = makeInner();
@@ -243,6 +243,9 @@ function isLegacyDimensionsInput(dimensionsInput) {
 function isDimensionStacked(data, stackedDim) {
   return !!stackedDim && stackedDim === data.getCalculationInfo("stackedDimension");
 }
+function getStackedDimension(data, targetDim) {
+  return isDimensionStacked(data, targetDim) ? data.getCalculationInfo("stackResultDimension") : targetDim;
+}
 
 // C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/util/vendor.js
 var supportFloat32Array = typeof Float32Array !== "undefined";
@@ -262,6 +265,7 @@ export {
   shouldOmitUnusedDimensions,
   enableDataStack,
   isDimensionStacked,
+  getStackedDimension,
   createFloat32Array
 };
-//# sourceMappingURL=chunk-TFBRQ3IM.js.map
+//# sourceMappingURL=chunk-GO2JNPCO.js.map

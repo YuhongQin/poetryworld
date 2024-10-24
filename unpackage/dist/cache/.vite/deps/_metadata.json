@@ -2,54 +2,81 @@
   "hash": "10b345fe",
   "configHash": "abc01f7b",
   "lockfileHash": "941aabbd",
-  "browserHash": "03771f43",
+  "browserHash": "f61eefa0",
   "optimized": {
     "echarts/lib/chart/line": {
       "src": "../../../../../node_modules/echarts/lib/chart/line.js",
       "file": "echarts_lib_chart_line.js",
-      "fileHash": "2336305b",
+      "fileHash": "4b1bb423",
       "needsInterop": false
     },
     "echarts/lib/component/title": {
       "src": "../../../../../node_modules/echarts/lib/component/title.js",
       "file": "echarts_lib_component_title.js",
-      "fileHash": "b103fee0",
+      "fileHash": "ae627abe",
       "needsInterop": false
     },
     "echarts/lib/component/tooltip": {
       "src": "../../../../../node_modules/echarts/lib/component/tooltip.js",
       "file": "echarts_lib_component_tooltip.js",
-      "fileHash": "e09d1d56",
+      "fileHash": "8dfce2ee",
       "needsInterop": false
     },
     "vue-echarts": {
       "src": "../../../../../node_modules/vue-echarts/dist/index.js",
       "file": "vue-echarts.js",
-      "fileHash": "4e3a886a",
+      "fileHash": "f26ca123",
       "needsInterop": false
     },
-    "uview-ui": {
-      "src": "../../../../../node_modules/uview-ui/index.js",
-      "file": "uview-ui.js",
-      "fileHash": "e8f6ac46",
+    "js-cookie": {
+      "src": "../../../../../node_modules/js-cookie/dist/js.cookie.mjs",
+      "file": "js-cookie.js",
+      "fileHash": "c3347da2",
+      "needsInterop": false
+    },
+    "echarts-wordcloud": {
+      "src": "../../../../../node_modules/echarts-wordcloud/index.js",
+      "file": "echarts-wordcloud.js",
+      "fileHash": "84976373",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../../../node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "a1dc8a08",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-3Y73X4AW": {
-      "file": "chunk-3Y73X4AW.js"
+    "chunk-HZRHYTT2": {
+      "file": "chunk-HZRHYTT2.js"
     },
-    "chunk-6EX5G3WO": {
-      "file": "chunk-6EX5G3WO.js"
+    "chunk-U6TMG54K": {
+      "file": "chunk-U6TMG54K.js"
     },
-    "chunk-TFBRQ3IM": {
-      "file": "chunk-TFBRQ3IM.js"
+    "chunk-EBWXBOEB": {
+      "file": "chunk-EBWXBOEB.js"
     },
-    "chunk-QJRVK6RT": {
-      "file": "chunk-QJRVK6RT.js"
+    "chunk-UWGNOK5X": {
+      "file": "chunk-UWGNOK5X.js"
     },
-    "chunk-MNTBHR2J": {
-      "file": "chunk-MNTBHR2J.js"
+    "chunk-DJHXIVHW": {
+      "file": "chunk-DJHXIVHW.js"
+    },
+    "chunk-NURO7GMT": {
+      "file": "chunk-NURO7GMT.js"
+    },
+    "chunk-ZUGBGGFC": {
+      "file": "chunk-ZUGBGGFC.js"
+    },
+    "chunk-GO2JNPCO": {
+      "file": "chunk-GO2JNPCO.js"
+    },
+    "chunk-RRA2ZF5S": {
+      "file": "chunk-RRA2ZF5S.js"
+    },
+    "chunk-F5QR3K72": {
+      "file": "chunk-F5QR3K72.js"
     }
   }
 }
