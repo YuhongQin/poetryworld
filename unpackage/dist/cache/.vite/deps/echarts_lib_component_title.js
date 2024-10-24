@@ -10,9 +10,10 @@ import {
   retrieve2,
   use,
   windowOpen
-} from "./chunk-4HBSGC4O.js";
+} from "./chunk-QJRVK6RT.js";
+import "./chunk-MNTBHR2J.js";
 
-// E:/竞赛/poetryworld/node_modules/echarts/lib/component/title/install.js
+// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/component/title/install.js
 var TitleModel = (
   /** @class */
   function(_super) {
@@ -184,6 +185,6 @@ function install(registers) {
   registers.registerComponentView(TitleView);
 }
 
-// E:/竞赛/poetryworld/node_modules/echarts/lib/component/title.js
+// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/component/title.js
 use(install);
 //# sourceMappingURL=echarts_lib_component_title.js.map

@@ -94,7 +94,15 @@
         	{
         		"navigationBarTitleText" : ""
         	}
-        }
+        },
+		{
+					"path" : "pages/AI/sketch2poem",
+					"style" : 
+					{
+						"navigationBarTitleText" : "涂鸦配诗"
+					}
+		}
+
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

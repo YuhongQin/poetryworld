@@ -6,12 +6,12 @@
 				:class="navIndex==index ? 'activite' : ''" @click="checkIndex(index)">{{tab.name}}</view>
 		</scroll-view>
 		<!-- tab切换结束 -->
-		
+
 		<!-- 第一个页面开始 -->
 		<view class="content" v-if="navIndex==0">
 			<view class="container" v-if="!isSubmit">
 				<!-- 诗配图输入栏 -->
-				<uni-search-bar class="search-bar" bgColor="white" v-model="inputText" @confirm="submitPoetry" 
+				<uni-search-bar class="search-bar" bgColor="white" v-model="inputText" @confirm="submitPoetry"
 					:focus="true" placeholder="请输入诗句..." />
 			</view>
 			<!-- 诗配图结果展示 -->
@@ -34,7 +34,7 @@
 						</view>
 						<view class="AIPoem">夕阳无限好</view>
 						<view class="AIPoem">只是近黄昏</view>
-						
+
 						<view class="imgContainer">
 							<image src="../../static/initialImgs/2.jpg"></image>
 						</view>
@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<!-- 第一个页面结束 -->
-		
+
 		<!-- 第二个页面：图配诗 -->
 		<view class="content" v-if="navIndex==1">
 			<view class="container-poem">
@@ -58,7 +58,7 @@
 					<button class="upload-button" @click="chooseImage">选择图片</button>
 				</view>
 			</view>
-			
+
 			<!-- 图配诗结果展示 -->
 			<view class="poem-card">
 				<image :src="tempPath" mode="widthFix"></image>
@@ -76,7 +76,8 @@
 					<view class="poem-body">
 						<view class="poem-title" style="font-weight: 700;">{{info.name}}</view>
 						<view class="poem-author" style="font-size:14px; color: #7b7b7b;">{{info.author}}</view>
-						<view class="poem-content" v-for="(item,i) in info.content" :key='i' style="font-size:16px; color: #7b7b7b;">
+						<view class="poem-content" v-for="(item,i) in info.content" :key='i'
+							style="font-size:16px; color: #7b7b7b;">
 							{{item}}
 						</view>
 					</view>
@@ -84,11 +85,21 @@
 			</view>
 		</view>
 		<!-- 第二个页面结束 -->
+		<!-- 第三个页面开始 -->
+		<view class="content" v-if="navIndex==2">
+			<Sketch2poem></Sketch2poem>
+		</view>
+		<!-- 第三个页面结束 -->
+
 	</view>
 </template>
 
 <script>
+	import Sketch2poem from './sketch2poem.vue';
 	export default {
+		components:{
+			Sketch2poem
+		},
 		data() {
 			return {
 				navIndex: 0, // 控制 tab 切换
@@ -97,12 +108,17 @@
 				isSubmit: false, // 控制诗配图页面的显示
 				imageUrl: '', // 图片URL
 				tabBars: [{
-					name: '诗配图',
-					id: 'poem-picture'
-				}, {
-					name: '图配诗',
-					id: 'picture-poem'
-				}],
+						name: '诗配图',
+						id: 'poem-picture'
+					}, {
+						name: '图配诗',
+						id: 'picture-poem'
+					},
+					{
+						name: '涂鸦配诗',
+						id: 'sketch-poem'
+					}
+				],
 				inputText: '春眠不觉晓，处处闻啼鸟', // 用户输入的诗句
 				isColumn: false, // 控制列布局
 				poetrySwiper: [], // 图配诗返回的数据
@@ -110,15 +126,15 @@
 			};
 		},
 		mounted() {
-					this.showExampleData();
-				},
+			this.showExampleData();
+		},
 		methods: {
 			showExampleData() {
-							this.imageUrl = this.exampleImageUrl;
-							const midpoint = Math.ceil(this.inputText.length / 2);
-							this.leftColumnText = this.inputText.substring(0, midpoint);
-							this.rightColumnText = this.inputText.substring(midpoint);
-						},
+				this.imageUrl = this.exampleImageUrl;
+				const midpoint = Math.ceil(this.inputText.length / 2);
+				this.leftColumnText = this.inputText.substring(0, midpoint);
+				this.rightColumnText = this.inputText.substring(midpoint);
+			},
 			// 切换tab
 			checkIndex(index) {
 				this.navIndex = index;
@@ -135,7 +151,7 @@
 				this.leftColumnText = this.inputText.substring(0, midpoint);
 				this.rightColumnText = this.inputText.substring(midpoint);
 				this.isSubmit = true;
-				
+
 				// 请求诗配图接口
 				const baseUrl = 'http://www.poetryworld.cn:8198';
 				uni.request({
@@ -151,7 +167,7 @@
 			getImageUrl() {
 				uni.request({
 					url: `http://www.poetryworld.cn:8198/api/v1/getunsplash?path=${this.imageUrl}`,
-					method: "GET",			
+					method: "GET",
 					responseType: 'arraybuffer',
 					success: (res) => {
 						this.imageUrl = 'data:image/png;base64,' + uni.arrayBufferToBase64(res.data);
@@ -168,7 +184,9 @@
 							url: 'http://www.poetryworld.cn:8198/api/v1/img2txt',
 							filePath: tempFilePaths[0],
 							name: 'file',
-							formData: { 'user': 'test' },
+							formData: {
+								'user': 'test'
+							},
 							success: (uploadFileRes) => {
 								this.poetrySwiper = JSON.parse(uploadFileRes.data).poems;
 							}
@@ -184,17 +202,20 @@
 	.page {
 		background-image: url('/static/AI/bg.jpg');
 	}
+
 	/* 激活的tab样式 */
 	.activite {
 		color: #856d72;
 		font-weight: 700;
 		border-bottom: 2px solid #856d72;
 	}
+
 	.scroll-view_H {
 		white-space: nowrap;
 		width: 100%;
 		color: #CCCCCC;
 	}
+
 	.scroll-view-item_H {
 		display: inline-block;
 		width: 11.2%;
@@ -202,10 +223,12 @@
 		line-height: 50rpx;
 		text-align: center;
 	}
+
 	.scroll-view-item_H:first-child {
 		margin-left: 37.5%;
 		margin-right: 5%;
 	}
+
 	/* 诗配图卡片 */
 	.poet-card {
 		margin: 20px auto;
@@ -216,6 +239,7 @@
 		border: 1.5px solid grey;
 		border-left: 4px solid #B9B177;
 	}
+
 	.AIPoem {
 		font-size: 18px;
 		color: black;
@@ -223,23 +247,27 @@
 		margin-left: 13px;
 		opacity: 0.8;
 	}
+
 	.imgContainer {
 		width: 300px;
 		height: 200px;
 		overflow: hidden;
 		position: relative;
 	}
+
 	.imgContainer img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
 	}
+
 	.logoContainer {
 		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 	}
+
 	.logo {
 		margin-right: 20px;
 		padding: 5px;
@@ -248,15 +276,18 @@
 		font-size: 16px;
 		border-radius: 5px;
 	}
+
 	.back {
 		outline: none;
 		background-color: transparent;
 		color: #B9B177;
 		font-size: 16px;
 	}
+
 	.upload-box {
 		padding: 20px;
 	}
+
 	.upload-button {
 		width: 100%;
 		font-size: 16px;
@@ -264,24 +295,29 @@
 		color: #fff;
 		font-weight: 700;
 	}
+
 	.poem-card {
 		padding: 10px;
 	}
+
 	image {
 		margin-top: 5%;
 		margin-left: 2.5%;
 		width: 95%;
 	}
+
 	.poem-container {
 		padding: 10px;
 	}
+
 	.poem-head {
 		display: flex;
 	}
+
 	.poem-logo {
-		width: 40px; 
-		height: 38px; 
-		border-radius: 6px; 
+		width: 40px;
+		height: 38px;
+		border-radius: 6px;
 		background-color: #0a9a8d;
 		text-align: center;
 		font-size: 25px;
@@ -289,10 +325,12 @@
 		padding-top: 2px;
 		margin-right: 10px;
 	}
+
 	.info-number {
-		font-size: 12px; 
-		color:#3c3c3c;
+		font-size: 12px;
+		color: #3c3c3c;
 	}
+
 	.poem-body {
 		margin-top: 2%;
 		margin-left: 11%;
