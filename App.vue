@@ -33,7 +33,9 @@
 	  font-family: 'jinghua', serif;
 	  font-size: 14px;
 	}
-	
+	.uni-page-head{
+		font-family: 'jinghua', serif;
+	}
 	/* #endif */
 	.example-info {
 		font-size: 14px;

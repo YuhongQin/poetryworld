@@ -7,9 +7,9 @@ import {
   makeInner,
   retrieve2,
   shouldRetrieveDataByName
-} from "./chunk-RRA2ZF5S.js";
+} from "./chunk-4HBSGC4O.js";
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/helper/SeriesDataSchema.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/helper/SeriesDataSchema.js
 var inner = makeInner();
 var dimTypeShort = {
   float: "f",
@@ -145,7 +145,7 @@ function shouldOmitUnusedDimensions(dimCount) {
   return dimCount > 30;
 }
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/helper/dataStackHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/helper/dataStackHelper.js
 function enableDataStack(seriesModel, dimensionsInput, opt) {
   opt = opt || {};
   var byIndex = opt.byIndex;
@@ -243,11 +243,8 @@ function isLegacyDimensionsInput(dimensionsInput) {
 function isDimensionStacked(data, stackedDim) {
   return !!stackedDim && stackedDim === data.getCalculationInfo("stackedDimension");
 }
-function getStackedDimension(data, targetDim) {
-  return isDimensionStacked(data, targetDim) ? data.getCalculationInfo("stackResultDimension") : targetDim;
-}
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/util/vendor.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/util/vendor.js
 var supportFloat32Array = typeof Float32Array !== "undefined";
 var Float32ArrayCtor = !supportFloat32Array ? Array : Float32Array;
 function createFloat32Array(arg) {
@@ -265,7 +262,6 @@ export {
   shouldOmitUnusedDimensions,
   enableDataStack,
   isDimensionStacked,
-  getStackedDimension,
   createFloat32Array
 };
-//# sourceMappingURL=chunk-GO2JNPCO.js.map
+//# sourceMappingURL=chunk-76MPX4BB.js.map

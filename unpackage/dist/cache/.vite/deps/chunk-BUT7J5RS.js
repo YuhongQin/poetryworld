@@ -1,9 +1,4 @@
 import {
-  createFloat32Array,
-  getStackedDimension,
-  isDimensionStacked
-} from "./chunk-GO2JNPCO.js";
-import {
   BoundingRect_default,
   ONE_DAY,
   ONE_HOUR,
@@ -15,11 +10,8 @@ import {
   addCommas,
   assert,
   createHashMap,
-  createRenderPlanner,
   dateGetterName,
   dateSetterName,
-  defaults,
-  each,
   enableClassManagement,
   eqNaN,
   filter,
@@ -39,7 +31,6 @@ import {
   isObject,
   isPrimaryTimeUnit,
   isString,
-  keys,
   leveledFormat,
   map,
   millisecondsGetterName,
@@ -51,402 +42,15 @@ import {
   nice,
   parseDate,
   parsePercent,
-  parsePercent2,
   quantity,
-  quantityExponent,
   round,
   secondsGetterName,
   secondsSetterName,
   timeUnits,
   warn
-} from "./chunk-RRA2ZF5S.js";
+} from "./chunk-4HBSGC4O.js";
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/layout/barGrid.js
-var STACK_PREFIX = "__ec_stack_";
-function getSeriesStackId(seriesModel) {
-  return seriesModel.get("stack") || STACK_PREFIX + seriesModel.seriesIndex;
-}
-function getAxisKey(axis) {
-  return axis.dim + axis.index;
-}
-function getLayoutOnAxis(opt) {
-  var params = [];
-  var baseAxis = opt.axis;
-  var axisKey = "axis0";
-  if (baseAxis.type !== "category") {
-    return;
-  }
-  var bandWidth = baseAxis.getBandWidth();
-  for (var i = 0; i < opt.count || 0; i++) {
-    params.push(defaults({
-      bandWidth,
-      axisKey,
-      stackId: STACK_PREFIX + i
-    }, opt));
-  }
-  var widthAndOffsets = doCalBarWidthAndOffset(params);
-  var result = [];
-  for (var i = 0; i < opt.count; i++) {
-    var item = widthAndOffsets[axisKey][STACK_PREFIX + i];
-    item.offsetCenter = item.offset + item.width / 2;
-    result.push(item);
-  }
-  return result;
-}
-function prepareLayoutBarSeries(seriesType, ecModel) {
-  var seriesModels = [];
-  ecModel.eachSeriesByType(seriesType, function(seriesModel) {
-    if (isOnCartesian(seriesModel)) {
-      seriesModels.push(seriesModel);
-    }
-  });
-  return seriesModels;
-}
-function getValueAxesMinGaps(barSeries) {
-  var axisValues = {};
-  each(barSeries, function(seriesModel) {
-    var cartesian = seriesModel.coordinateSystem;
-    var baseAxis = cartesian.getBaseAxis();
-    if (baseAxis.type !== "time" && baseAxis.type !== "value") {
-      return;
-    }
-    var data = seriesModel.getData();
-    var key2 = baseAxis.dim + "_" + baseAxis.index;
-    var dimIdx = data.getDimensionIndex(data.mapDimension(baseAxis.dim));
-    var store = data.getStore();
-    for (var i = 0, cnt = store.count(); i < cnt; ++i) {
-      var value = store.get(dimIdx, i);
-      if (!axisValues[key2]) {
-        axisValues[key2] = [value];
-      } else {
-        axisValues[key2].push(value);
-      }
-    }
-  });
-  var axisMinGaps = {};
-  for (var key in axisValues) {
-    if (axisValues.hasOwnProperty(key)) {
-      var valuesInAxis = axisValues[key];
-      if (valuesInAxis) {
-        valuesInAxis.sort(function(a, b) {
-          return a - b;
-        });
-        var min = null;
-        for (var j = 1; j < valuesInAxis.length; ++j) {
-          var delta = valuesInAxis[j] - valuesInAxis[j - 1];
-          if (delta > 0) {
-            min = min === null ? delta : Math.min(min, delta);
-          }
-        }
-        axisMinGaps[key] = min;
-      }
-    }
-  }
-  return axisMinGaps;
-}
-function makeColumnLayout(barSeries) {
-  var axisMinGaps = getValueAxesMinGaps(barSeries);
-  var seriesInfoList = [];
-  each(barSeries, function(seriesModel) {
-    var cartesian = seriesModel.coordinateSystem;
-    var baseAxis = cartesian.getBaseAxis();
-    var axisExtent = baseAxis.getExtent();
-    var bandWidth;
-    if (baseAxis.type === "category") {
-      bandWidth = baseAxis.getBandWidth();
-    } else if (baseAxis.type === "value" || baseAxis.type === "time") {
-      var key = baseAxis.dim + "_" + baseAxis.index;
-      var minGap = axisMinGaps[key];
-      var extentSpan = Math.abs(axisExtent[1] - axisExtent[0]);
-      var scale2 = baseAxis.scale.getExtent();
-      var scaleSpan = Math.abs(scale2[1] - scale2[0]);
-      bandWidth = minGap ? extentSpan / scaleSpan * minGap : extentSpan;
-    } else {
-      var data = seriesModel.getData();
-      bandWidth = Math.abs(axisExtent[1] - axisExtent[0]) / data.count();
-    }
-    var barWidth = parsePercent2(seriesModel.get("barWidth"), bandWidth);
-    var barMaxWidth = parsePercent2(seriesModel.get("barMaxWidth"), bandWidth);
-    var barMinWidth = parsePercent2(
-      // barMinWidth by default is 0.5 / 1 in cartesian. Because in value axis,
-      // the auto-calculated bar width might be less than 0.5 / 1.
-      seriesModel.get("barMinWidth") || (isInLargeMode(seriesModel) ? 0.5 : 1),
-      bandWidth
-    );
-    var barGap = seriesModel.get("barGap");
-    var barCategoryGap = seriesModel.get("barCategoryGap");
-    seriesInfoList.push({
-      bandWidth,
-      barWidth,
-      barMaxWidth,
-      barMinWidth,
-      barGap,
-      barCategoryGap,
-      axisKey: getAxisKey(baseAxis),
-      stackId: getSeriesStackId(seriesModel)
-    });
-  });
-  return doCalBarWidthAndOffset(seriesInfoList);
-}
-function doCalBarWidthAndOffset(seriesInfoList) {
-  var columnsMap = {};
-  each(seriesInfoList, function(seriesInfo, idx) {
-    var axisKey = seriesInfo.axisKey;
-    var bandWidth = seriesInfo.bandWidth;
-    var columnsOnAxis = columnsMap[axisKey] || {
-      bandWidth,
-      remainedWidth: bandWidth,
-      autoWidthCount: 0,
-      categoryGap: null,
-      gap: "20%",
-      stacks: {}
-    };
-    var stacks = columnsOnAxis.stacks;
-    columnsMap[axisKey] = columnsOnAxis;
-    var stackId = seriesInfo.stackId;
-    if (!stacks[stackId]) {
-      columnsOnAxis.autoWidthCount++;
-    }
-    stacks[stackId] = stacks[stackId] || {
-      width: 0,
-      maxWidth: 0
-    };
-    var barWidth = seriesInfo.barWidth;
-    if (barWidth && !stacks[stackId].width) {
-      stacks[stackId].width = barWidth;
-      barWidth = Math.min(columnsOnAxis.remainedWidth, barWidth);
-      columnsOnAxis.remainedWidth -= barWidth;
-    }
-    var barMaxWidth = seriesInfo.barMaxWidth;
-    barMaxWidth && (stacks[stackId].maxWidth = barMaxWidth);
-    var barMinWidth = seriesInfo.barMinWidth;
-    barMinWidth && (stacks[stackId].minWidth = barMinWidth);
-    var barGap = seriesInfo.barGap;
-    barGap != null && (columnsOnAxis.gap = barGap);
-    var barCategoryGap = seriesInfo.barCategoryGap;
-    barCategoryGap != null && (columnsOnAxis.categoryGap = barCategoryGap);
-  });
-  var result = {};
-  each(columnsMap, function(columnsOnAxis, coordSysName) {
-    result[coordSysName] = {};
-    var stacks = columnsOnAxis.stacks;
-    var bandWidth = columnsOnAxis.bandWidth;
-    var categoryGapPercent = columnsOnAxis.categoryGap;
-    if (categoryGapPercent == null) {
-      var columnCount = keys(stacks).length;
-      categoryGapPercent = Math.max(35 - columnCount * 4, 15) + "%";
-    }
-    var categoryGap = parsePercent2(categoryGapPercent, bandWidth);
-    var barGapPercent = parsePercent2(columnsOnAxis.gap, 1);
-    var remainedWidth = columnsOnAxis.remainedWidth;
-    var autoWidthCount = columnsOnAxis.autoWidthCount;
-    var autoWidth = (remainedWidth - categoryGap) / (autoWidthCount + (autoWidthCount - 1) * barGapPercent);
-    autoWidth = Math.max(autoWidth, 0);
-    each(stacks, function(column) {
-      var maxWidth = column.maxWidth;
-      var minWidth = column.minWidth;
-      if (!column.width) {
-        var finalWidth = autoWidth;
-        if (maxWidth && maxWidth < finalWidth) {
-          finalWidth = Math.min(maxWidth, remainedWidth);
-        }
-        if (minWidth && minWidth > finalWidth) {
-          finalWidth = minWidth;
-        }
-        if (finalWidth !== autoWidth) {
-          column.width = finalWidth;
-          remainedWidth -= finalWidth + barGapPercent * finalWidth;
-          autoWidthCount--;
-        }
-      } else {
-        var finalWidth = column.width;
-        if (maxWidth) {
-          finalWidth = Math.min(finalWidth, maxWidth);
-        }
-        if (minWidth) {
-          finalWidth = Math.max(finalWidth, minWidth);
-        }
-        column.width = finalWidth;
-        remainedWidth -= finalWidth + barGapPercent * finalWidth;
-        autoWidthCount--;
-      }
-    });
-    autoWidth = (remainedWidth - categoryGap) / (autoWidthCount + (autoWidthCount - 1) * barGapPercent);
-    autoWidth = Math.max(autoWidth, 0);
-    var widthSum = 0;
-    var lastColumn;
-    each(stacks, function(column, idx) {
-      if (!column.width) {
-        column.width = autoWidth;
-      }
-      lastColumn = column;
-      widthSum += column.width * (1 + barGapPercent);
-    });
-    if (lastColumn) {
-      widthSum -= lastColumn.width * barGapPercent;
-    }
-    var offset = -widthSum / 2;
-    each(stacks, function(column, stackId) {
-      result[coordSysName][stackId] = result[coordSysName][stackId] || {
-        bandWidth,
-        offset,
-        width: column.width
-      };
-      offset += column.width * (1 + barGapPercent);
-    });
-  });
-  return result;
-}
-function retrieveColumnLayout(barWidthAndOffset, axis, seriesModel) {
-  if (barWidthAndOffset && axis) {
-    var result = barWidthAndOffset[getAxisKey(axis)];
-    if (result != null && seriesModel != null) {
-      return result[getSeriesStackId(seriesModel)];
-    }
-    return result;
-  }
-}
-function layout(seriesType, ecModel) {
-  var seriesModels = prepareLayoutBarSeries(seriesType, ecModel);
-  var barWidthAndOffset = makeColumnLayout(seriesModels);
-  each(seriesModels, function(seriesModel) {
-    var data = seriesModel.getData();
-    var cartesian = seriesModel.coordinateSystem;
-    var baseAxis = cartesian.getBaseAxis();
-    var stackId = getSeriesStackId(seriesModel);
-    var columnLayoutInfo = barWidthAndOffset[getAxisKey(baseAxis)][stackId];
-    var columnOffset = columnLayoutInfo.offset;
-    var columnWidth = columnLayoutInfo.width;
-    data.setLayout({
-      bandWidth: columnLayoutInfo.bandWidth,
-      offset: columnOffset,
-      size: columnWidth
-    });
-  });
-}
-function createProgressiveLayout(seriesType) {
-  return {
-    seriesType,
-    plan: createRenderPlanner(),
-    reset: function(seriesModel) {
-      if (!isOnCartesian(seriesModel)) {
-        return;
-      }
-      var data = seriesModel.getData();
-      var cartesian = seriesModel.coordinateSystem;
-      var baseAxis = cartesian.getBaseAxis();
-      var valueAxis = cartesian.getOtherAxis(baseAxis);
-      var valueDimIdx = data.getDimensionIndex(data.mapDimension(valueAxis.dim));
-      var baseDimIdx = data.getDimensionIndex(data.mapDimension(baseAxis.dim));
-      var drawBackground = seriesModel.get("showBackground", true);
-      var valueDim = data.mapDimension(valueAxis.dim);
-      var stackResultDim = data.getCalculationInfo("stackResultDimension");
-      var stacked = isDimensionStacked(data, valueDim) && !!data.getCalculationInfo("stackedOnSeries");
-      var isValueAxisH = valueAxis.isHorizontal();
-      var valueAxisStart = getValueAxisStart(baseAxis, valueAxis);
-      var isLarge = isInLargeMode(seriesModel);
-      var barMinHeight = seriesModel.get("barMinHeight") || 0;
-      var stackedDimIdx = stackResultDim && data.getDimensionIndex(stackResultDim);
-      var columnWidth = data.getLayout("size");
-      var columnOffset = data.getLayout("offset");
-      return {
-        progress: function(params, data2) {
-          var count = params.count;
-          var largePoints = isLarge && createFloat32Array(count * 3);
-          var largeBackgroundPoints = isLarge && drawBackground && createFloat32Array(count * 3);
-          var largeDataIndices = isLarge && createFloat32Array(count);
-          var coordLayout = cartesian.master.getRect();
-          var bgSize = isValueAxisH ? coordLayout.width : coordLayout.height;
-          var dataIndex;
-          var store = data2.getStore();
-          var idxOffset = 0;
-          while ((dataIndex = params.next()) != null) {
-            var value = store.get(stacked ? stackedDimIdx : valueDimIdx, dataIndex);
-            var baseValue = store.get(baseDimIdx, dataIndex);
-            var baseCoord = valueAxisStart;
-            var stackStartValue = void 0;
-            if (stacked) {
-              stackStartValue = +value - store.get(valueDimIdx, dataIndex);
-            }
-            var x = void 0;
-            var y = void 0;
-            var width = void 0;
-            var height = void 0;
-            if (isValueAxisH) {
-              var coord = cartesian.dataToPoint([value, baseValue]);
-              if (stacked) {
-                var startCoord = cartesian.dataToPoint([stackStartValue, baseValue]);
-                baseCoord = startCoord[0];
-              }
-              x = baseCoord;
-              y = coord[1] + columnOffset;
-              width = coord[0] - baseCoord;
-              height = columnWidth;
-              if (Math.abs(width) < barMinHeight) {
-                width = (width < 0 ? -1 : 1) * barMinHeight;
-              }
-            } else {
-              var coord = cartesian.dataToPoint([baseValue, value]);
-              if (stacked) {
-                var startCoord = cartesian.dataToPoint([baseValue, stackStartValue]);
-                baseCoord = startCoord[1];
-              }
-              x = coord[0] + columnOffset;
-              y = baseCoord;
-              width = columnWidth;
-              height = coord[1] - baseCoord;
-              if (Math.abs(height) < barMinHeight) {
-                height = (height <= 0 ? -1 : 1) * barMinHeight;
-              }
-            }
-            if (!isLarge) {
-              data2.setItemLayout(dataIndex, {
-                x,
-                y,
-                width,
-                height
-              });
-            } else {
-              largePoints[idxOffset] = x;
-              largePoints[idxOffset + 1] = y;
-              largePoints[idxOffset + 2] = isValueAxisH ? width : height;
-              if (largeBackgroundPoints) {
-                largeBackgroundPoints[idxOffset] = isValueAxisH ? coordLayout.x : x;
-                largeBackgroundPoints[idxOffset + 1] = isValueAxisH ? y : coordLayout.y;
-                largeBackgroundPoints[idxOffset + 2] = bgSize;
-              }
-              largeDataIndices[dataIndex] = dataIndex;
-            }
-            idxOffset += 3;
-          }
-          if (isLarge) {
-            data2.setLayout({
-              largePoints,
-              largeDataIndices,
-              largeBackgroundPoints,
-              valueAxisHorizontal: isValueAxisH
-            });
-          }
-        }
-      };
-    }
-  };
-}
-function isOnCartesian(seriesModel) {
-  return seriesModel.coordinateSystem && seriesModel.coordinateSystem.type === "cartesian2d";
-}
-function isInLargeMode(seriesModel) {
-  return seriesModel.pipelineContext && seriesModel.pipelineContext.large;
-}
-function getValueAxisStart(baseAxis, valueAxis) {
-  var startValue = valueAxis.model.get("startValue");
-  if (!startValue) {
-    startValue = 0;
-  }
-  return valueAxis.toGlobalCoord(valueAxis.dataToCoord(valueAxis.type === "log" ? startValue > 0 ? startValue : 1 : startValue));
-}
-
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/Scale.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/Scale.js
 var Scale = (
   /** @class */
   function() {
@@ -492,7 +96,7 @@ var Scale = (
 enableClassManagement(Scale);
 var Scale_default = Scale;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/data/OrdinalMeta.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/data/OrdinalMeta.js
 var uidBase = 0;
 var OrdinalMeta = (
   /** @class */
@@ -557,15 +161,7 @@ function getName(obj) {
 }
 var OrdinalMeta_default = OrdinalMeta;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/helper.js
-function isValueNice(val) {
-  var exp10 = Math.pow(10, quantityExponent(Math.abs(val)));
-  var f = Math.abs(val / exp10);
-  return f === 0 || f === 1 || f === 2 || f === 3 || f === 5;
-}
-function isIntervalOrLogScale(scale2) {
-  return scale2.type === "interval" || scale2.type === "log";
-}
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/helper.js
 function intervalScaleNiceTicks(extent, splitNumber, minInterval, maxInterval) {
   var result = {};
   var span = extent[1] - extent[0];
@@ -580,20 +176,6 @@ function intervalScaleNiceTicks(extent, splitNumber, minInterval, maxInterval) {
   var niceTickExtent = result.niceTickExtent = [round(Math.ceil(extent[0] / interval) * interval, precision), round(Math.floor(extent[1] / interval) * interval, precision)];
   fixExtent(niceTickExtent, extent);
   return result;
-}
-function increaseInterval(interval) {
-  var exp10 = Math.pow(10, quantityExponent(interval));
-  var f = interval / exp10;
-  if (!f) {
-    f = 1;
-  } else if (f === 2) {
-    f = 3;
-  } else if (f === 3) {
-    f = 5;
-  } else {
-    f *= 2;
-  }
-  return round(f * exp10);
 }
 function getIntervalPrecision(interval) {
   return getPrecision(interval) + 2;
@@ -623,7 +205,7 @@ function scale(val, extent) {
   return val * (extent[1] - extent[0]) + extent[0];
 }
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/Ordinal.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/Ordinal.js
 var OrdinalScale = (
   /** @class */
   function(_super) {
@@ -741,9 +323,8 @@ var OrdinalScale = (
   }(Scale_default)
 );
 Scale_default.registerClass(OrdinalScale);
-var Ordinal_default = OrdinalScale;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/Interval.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/Interval.js
 var roundNumber = round;
 var IntervalScale = (
   /** @class */
@@ -929,7 +510,7 @@ var IntervalScale = (
 Scale_default.registerClass(IntervalScale);
 var Interval_default = IntervalScale;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/Time.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/Time.js
 var bisect = function(a, x, lo, hi) {
   while (lo < hi) {
     var mid = lo + hi >>> 1;
@@ -1297,9 +878,8 @@ function getIntervalTicks(bottomUnitName, approxInterval, isUTC, extent) {
   return result;
 }
 Scale_default.registerClass(TimeScale);
-var Time_default = TimeScale;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/scale/Log.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/scale/Log.js
 var scaleProto = Scale_default.prototype;
 var intervalScaleProto = Interval_default.prototype;
 var roundingErrorFix = round;
@@ -1411,9 +991,8 @@ function fixRoundingError(val, originalVal) {
   return roundingErrorFix(val, getPrecision(originalVal));
 }
 Scale_default.registerClass(LogScale);
-var Log_default = LogScale;
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/coord/scaleRawExtentInfo.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/scaleRawExtentInfo.js
 var ScaleRawExtentInfo = (
   /** @class */
   function() {
@@ -1538,127 +1117,11 @@ var DATA_MIN_MAX_ATTR = {
   min: "_dataMin",
   max: "_dataMax"
 };
-function ensureScaleRawExtentInfo(scale2, model, originalExtent) {
-  var rawExtentInfo = scale2.rawExtentInfo;
-  if (rawExtentInfo) {
-    return rawExtentInfo;
-  }
-  rawExtentInfo = new ScaleRawExtentInfo(scale2, model, originalExtent);
-  scale2.rawExtentInfo = rawExtentInfo;
-  return rawExtentInfo;
-}
 function parseAxisModelMinMax(scale2, minMax) {
   return minMax == null ? null : eqNaN(minMax) ? NaN : scale2.parse(minMax);
 }
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/coord/axisHelper.js
-function getScaleExtent(scale2, model) {
-  var scaleType = scale2.type;
-  var rawExtentResult = ensureScaleRawExtentInfo(scale2, model, scale2.getExtent()).calculate();
-  scale2.setBlank(rawExtentResult.isBlank);
-  var min = rawExtentResult.min;
-  var max = rawExtentResult.max;
-  var ecModel = model.ecModel;
-  if (ecModel && scaleType === "time") {
-    var barSeriesModels = prepareLayoutBarSeries("bar", ecModel);
-    var isBaseAxisAndHasBarSeries_1 = false;
-    each(barSeriesModels, function(seriesModel) {
-      isBaseAxisAndHasBarSeries_1 = isBaseAxisAndHasBarSeries_1 || seriesModel.getBaseAxis() === model.axis;
-    });
-    if (isBaseAxisAndHasBarSeries_1) {
-      var barWidthAndOffset = makeColumnLayout(barSeriesModels);
-      var adjustedScale = adjustScaleForOverflow(min, max, model, barWidthAndOffset);
-      min = adjustedScale.min;
-      max = adjustedScale.max;
-    }
-  }
-  return {
-    extent: [min, max],
-    // "fix" means "fixed", the value should not be
-    // changed in the subsequent steps.
-    fixMin: rawExtentResult.minFixed,
-    fixMax: rawExtentResult.maxFixed
-  };
-}
-function adjustScaleForOverflow(min, max, model, barWidthAndOffset) {
-  var axisExtent = model.axis.getExtent();
-  var axisLength = axisExtent[1] - axisExtent[0];
-  var barsOnCurrentAxis = retrieveColumnLayout(barWidthAndOffset, model.axis);
-  if (barsOnCurrentAxis === void 0) {
-    return {
-      min,
-      max
-    };
-  }
-  var minOverflow = Infinity;
-  each(barsOnCurrentAxis, function(item) {
-    minOverflow = Math.min(item.offset, minOverflow);
-  });
-  var maxOverflow = -Infinity;
-  each(barsOnCurrentAxis, function(item) {
-    maxOverflow = Math.max(item.offset + item.width, maxOverflow);
-  });
-  minOverflow = Math.abs(minOverflow);
-  maxOverflow = Math.abs(maxOverflow);
-  var totalOverFlow = minOverflow + maxOverflow;
-  var oldRange = max - min;
-  var oldRangePercentOfNew = 1 - (minOverflow + maxOverflow) / axisLength;
-  var overflowBuffer = oldRange / oldRangePercentOfNew - oldRange;
-  max += overflowBuffer * (maxOverflow / totalOverFlow);
-  min -= overflowBuffer * (minOverflow / totalOverFlow);
-  return {
-    min,
-    max
-  };
-}
-function niceScaleExtent(scale2, inModel) {
-  var model = inModel;
-  var extentInfo = getScaleExtent(scale2, model);
-  var extent = extentInfo.extent;
-  var splitNumber = model.get("splitNumber");
-  if (scale2 instanceof Log_default) {
-    scale2.base = model.get("logBase");
-  }
-  var scaleType = scale2.type;
-  var interval = model.get("interval");
-  var isIntervalOrTime = scaleType === "interval" || scaleType === "time";
-  scale2.setExtent(extent[0], extent[1]);
-  scale2.calcNiceExtent({
-    splitNumber,
-    fixMin: extentInfo.fixMin,
-    fixMax: extentInfo.fixMax,
-    minInterval: isIntervalOrTime ? model.get("minInterval") : null,
-    maxInterval: isIntervalOrTime ? model.get("maxInterval") : null
-  });
-  if (interval != null) {
-    scale2.setInterval && scale2.setInterval(interval);
-  }
-}
-function createScaleByModel(model, axisType) {
-  axisType = axisType || model.get("type");
-  if (axisType) {
-    switch (axisType) {
-      case "category":
-        return new Ordinal_default({
-          ordinalMeta: model.getOrdinalMeta ? model.getOrdinalMeta() : model.getCategories(),
-          extent: [Infinity, -Infinity]
-        });
-      case "time":
-        return new Time_default({
-          locale: model.ecModel.getLocaleModel(),
-          useUTC: model.ecModel.get("useUTC")
-        });
-      default:
-        return new (Scale_default.getClass(axisType) || Interval_default)();
-    }
-  }
-}
-function ifAxisCrossZero(axis) {
-  var dataExtent = axis.scale.getExtent();
-  var min = dataExtent[0];
-  var max = dataExtent[1];
-  return !(min > 0 && max > 0 || min < 0 && max < 0);
-}
+// E:/竞赛/poetryworld/node_modules/echarts/lib/coord/axisHelper.js
 function makeLabelFormatter(axis) {
   var labelFormatter = axis.getLabelModel().get("formatter");
   var categoryTickStart = axis.type === "category" ? axis.scale.getExtent()[0] : null;
@@ -1696,48 +1159,6 @@ function makeLabelFormatter(axis) {
 function getAxisRawValue(axis, tick) {
   return axis.type === "category" ? axis.scale.getLabel(tick) : tick.value;
 }
-function estimateLabelUnionRect(axis) {
-  var axisModel = axis.model;
-  var scale2 = axis.scale;
-  if (!axisModel.get(["axisLabel", "show"]) || scale2.isBlank()) {
-    return;
-  }
-  var realNumberScaleTicks;
-  var tickCount;
-  var categoryScaleExtent = scale2.getExtent();
-  if (scale2 instanceof Ordinal_default) {
-    tickCount = scale2.count();
-  } else {
-    realNumberScaleTicks = scale2.getTicks();
-    tickCount = realNumberScaleTicks.length;
-  }
-  var axisLabelModel = axis.getLabelModel();
-  var labelFormatter = makeLabelFormatter(axis);
-  var rect;
-  var step = 1;
-  if (tickCount > 40) {
-    step = Math.ceil(tickCount / 40);
-  }
-  for (var i = 0; i < tickCount; i += step) {
-    var tick = realNumberScaleTicks ? realNumberScaleTicks[i] : {
-      value: categoryScaleExtent[0] + i
-    };
-    var label = labelFormatter(tick, i);
-    var unrotatedSingleRect = axisLabelModel.getTextRect(label);
-    var singleRect = rotateTextRect(unrotatedSingleRect, axisLabelModel.get("rotate") || 0);
-    rect ? rect.union(singleRect) : rect = singleRect;
-  }
-  return rect;
-}
-function rotateTextRect(textRect, rotate) {
-  var rotateRadians = rotate * Math.PI / 180;
-  var beforeWidth = textRect.width;
-  var beforeHeight = textRect.height;
-  var afterWidth = beforeWidth * Math.abs(Math.cos(rotateRadians)) + Math.abs(beforeHeight * Math.sin(rotateRadians));
-  var afterHeight = beforeWidth * Math.abs(Math.sin(rotateRadians)) + Math.abs(beforeHeight * Math.cos(rotateRadians));
-  var rotatedRect = new BoundingRect_default(textRect.x, textRect.y, afterWidth, afterHeight);
-  return rotatedRect;
-}
 function getOptionCategoryInterval(model) {
   var interval = model.get("interval");
   return interval == null ? "auto" : interval;
@@ -1745,24 +1166,8 @@ function getOptionCategoryInterval(model) {
 function shouldShowAllLabels(axis) {
   return axis.type === "category" && getOptionCategoryInterval(axis.getLabelModel()) === 0;
 }
-function getDataDimensionsOnAxis(data, axisDim) {
-  var dataDimMap = {};
-  each(data.mapDimensionsAll(axisDim), function(dataDim) {
-    dataDimMap[getStackedDimension(data, dataDim)] = true;
-  });
-  return keys(dataDimMap);
-}
-function unionAxisExtentFromData(dataExtent, data, axisDim) {
-  if (data) {
-    each(getDataDimensionsOnAxis(data, axisDim), function(dim) {
-      var seriesExtent = data.getApproximateExtent(dim);
-      seriesExtent[0] < dataExtent[0] && (dataExtent[0] = seriesExtent[0]);
-      seriesExtent[1] > dataExtent[1] && (dataExtent[1] = seriesExtent[1]);
-    });
-  }
-}
 
-// C:/Users/14276/Desktop/个人事务/Mobile-PoetryWorld_front-main/Mobile-PoetryWorld_front-main/mym_app/node_modules/echarts/lib/label/labelLayoutHelper.js
+// E:/竞赛/poetryworld/node_modules/echarts/lib/label/labelLayoutHelper.js
 function prepareLayoutList(input) {
   var list = [];
   for (var i = 0; i < input.length; i++) {
@@ -1983,31 +1388,13 @@ function hideOverlap(labelList) {
 }
 
 export {
-  OrdinalMeta_default,
-  isValueNice,
-  isIntervalOrLogScale,
-  increaseInterval,
-  Ordinal_default,
-  Interval_default,
-  getLayoutOnAxis,
-  layout,
-  createProgressiveLayout,
-  Time_default,
-  ensureScaleRawExtentInfo,
-  getScaleExtent,
-  niceScaleExtent,
-  createScaleByModel,
-  ifAxisCrossZero,
   makeLabelFormatter,
   getAxisRawValue,
-  estimateLabelUnionRect,
   getOptionCategoryInterval,
   shouldShowAllLabels,
-  getDataDimensionsOnAxis,
-  unionAxisExtentFromData,
   prepareLayoutList,
   shiftLayoutOnX,
   shiftLayoutOnY,
   hideOverlap
 };
-//# sourceMappingURL=chunk-ZUGBGGFC.js.map
+//# sourceMappingURL=chunk-BUT7J5RS.js.map

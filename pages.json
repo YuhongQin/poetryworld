@@ -24,8 +24,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "AI检索",
-                "enablePullDownRefresh": false,
-				"backgroundColor": "#232323"
+                "enablePullDownRefresh": false
             }   
         }
         ,{
@@ -100,7 +99,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#f9f8f4",
+		"navigationBarBackgroundColor": "white",
 		"backgroundColor": "#b7ae8f"
 	},
 	// test
@@ -115,20 +114,20 @@
 			{
 				"pagePath": "pages/AI/AI",
 				"text": "AI检索",
-				"iconPath": "static/tabs/AI.png",
-				"selectedIconPath": "static/tabs/SAI.png"
+				"iconPath": "static/tabs/AAI.png",
+				"selectedIconPath": "static/tabs/SSAI.png"
 			},
 			{
 				"pagePath": "pages/DM/DM",
 				"text": "数据挖掘",
-				"iconPath": "static/tabs/DM.png",
-				"selectedIconPath": "static/tabs/SDM.png"
+				"iconPath": "static/tabs/DDM.png",
+				"selectedIconPath": "static/tabs/SSDM.png"
 			},
 			{
 				"pagePath": "pages/My/My",
 				"text": "我的",
-				"iconPath": "static/tabs/My.png",
-				"selectedIconPath": "static/tabs/SMy.png"
+				"iconPath": "static/tabs/my.png",
+				"selectedIconPath": "static/tabs/myy.png"
 			}
 		]
 	},
