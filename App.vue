@@ -14,7 +14,7 @@
 </script>
 
 <style lang="scss">
-	@import url("./static/iconfonts/iconfont.wxss");
+	//@import url("./static/iconfonts/iconfont.wxss");
 	/*每个页面公共css */
 	@import '@/uni_modules/uni-scss/index.scss';
 	/* #ifndef APP-NVUE */
