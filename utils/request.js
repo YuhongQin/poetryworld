@@ -8,7 +8,7 @@ export function request(config = {}) {
         header = {
 		}  
     } = config;  
-	console.log(data.get('file'))
+	//console.log(data.get('file'))
     url = packApiUrl(url);  
 	console.log(url)
     return new Promise((resolve, reject) => {  

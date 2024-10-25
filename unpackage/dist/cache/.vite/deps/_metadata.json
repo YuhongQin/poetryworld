@@ -1,46 +1,46 @@
 {
-  "hash": "26426028",
-  "configHash": "c62e26b0",
-  "lockfileHash": "e587db0b",
-  "browserHash": "214a6d5a",
+  "hash": "10b345fe",
+  "configHash": "abc01f7b",
+  "lockfileHash": "941aabbd",
+  "browserHash": "a0fc9a72",
   "optimized": {
     "echarts/lib/chart/line": {
       "src": "../../../../../node_modules/echarts/lib/chart/line.js",
       "file": "echarts_lib_chart_line.js",
-      "fileHash": "73152106",
+      "fileHash": "0ef7b41c",
       "needsInterop": false
     },
     "echarts/lib/component/title": {
       "src": "../../../../../node_modules/echarts/lib/component/title.js",
       "file": "echarts_lib_component_title.js",
-      "fileHash": "5efd624e",
+      "fileHash": "8572bdfa",
       "needsInterop": false
     },
     "echarts/lib/component/tooltip": {
       "src": "../../../../../node_modules/echarts/lib/component/tooltip.js",
       "file": "echarts_lib_component_tooltip.js",
-      "fileHash": "3aeabc52",
+      "fileHash": "1fb9a32b",
       "needsInterop": false
     },
     "vue-echarts": {
       "src": "../../../../../node_modules/vue-echarts/dist/index.js",
       "file": "vue-echarts.js",
-      "fileHash": "ed04e691",
+      "fileHash": "57fb31ed",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-PFIX6YTE": {
-      "file": "chunk-PFIX6YTE.js"
+    "chunk-WELZIYEN": {
+      "file": "chunk-WELZIYEN.js"
     },
-    "chunk-BUT7J5RS": {
-      "file": "chunk-BUT7J5RS.js"
+    "chunk-5HVPPOH7": {
+      "file": "chunk-5HVPPOH7.js"
     },
-    "chunk-76MPX4BB": {
-      "file": "chunk-76MPX4BB.js"
+    "chunk-AEMW2QTS": {
+      "file": "chunk-AEMW2QTS.js"
     },
-    "chunk-4HBSGC4O": {
-      "file": "chunk-4HBSGC4O.js"
+    "chunk-22KRYTSQ": {
+      "file": "chunk-22KRYTSQ.js"
     }
   }
 }
