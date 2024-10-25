@@ -27,7 +27,7 @@
 					</view>
 				</view>
 				<view v-else style="flex: 1; width: 100%;">
-					<view class="poet-card">
+					<view class="poet-card" style="opacity: 0.9;">
 						<view style="text-align: center; opacity: 0.8">示例</view>
 						<view class="imgContainer">
 							<image src="../../static/initialImgs/1.jpg"></image>
@@ -62,22 +62,24 @@
 			<!-- 图配诗结果展示 -->
 			<view class="poem-card">
 				<image :src="tempPath" mode="widthFix"></image>
-				<view class="poem-container" v-for="(info,index) in poetrySwiper" :key='index'>
-					<view class="poem-head">
-						<view class="poem-logo">梦</view>
-						<view class="AI-info">
-							<view style="color: #B9B177;">如梦令AI</view>
-							<view v-if="index == 0" class="info-number">诗一</view>
-							<view v-if="index == 1" class="info-number">诗二</view>
-							<view v-if="index == 2" class="info-number">诗三</view>
-							<view v-if="index == 3" class="info-number">诗四</view>
+				<view>
+					<view class="poem-container" v-for="(info,index) in poetrySwiper" :key='index'>
+						<view class="poem-head">
+							<view class="poem-logo">梦</view>
+							<view class="AI-info">
+								<view style="color: #B9B177;">如梦令AI</view>
+								<view v-if="index == 0" class="info-number">诗一</view>
+								<view v-if="index == 1" class="info-number">诗二</view>
+								<view v-if="index == 2" class="info-number">诗三</view>
+								<view v-if="index == 3" class="info-number">诗四</view>
+							</view>
 						</view>
-					</view>
-					<view class="poem-body">
-						<view class="poem-title" style="font-weight: 700;">{{info.name}}</view>
-						<view class="poem-author" style="font-size:14px; color: #7b7b7b;">{{info.author}}</view>
-						<view class="poem-content" v-for="(item,i) in info.content" :key='i' style="font-size:16px; color: #7b7b7b;">
-							{{item}}
+						<view class="poem-body">
+							<view class="poem-title" style="font-weight: 700;">{{info.name}}</view>
+							<view class="poem-author" style="font-size:14px; color: #7b7b7b;">{{info.author}}</view>
+							<view class="poem-content" v-for="(item,i) in info.content" :key='i' style="font-size:16px; color: #7b7b7b;">
+								{{item}}
+							</view>
 						</view>
 					</view>
 				</view>
@@ -266,6 +268,7 @@
 	}
 	.poem-card {
 		padding: 10px;
+		flex: 1; width: 100%;
 	}
 	image {
 		margin-top: 5%;
