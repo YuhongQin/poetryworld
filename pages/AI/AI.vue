@@ -1,7 +1,7 @@
 <template>
 	<view class="page">
 		<!-- tab切换开始 -->
-		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll">
+		<scroll-view class="scroll-view_H" scroll-x="true" >
 			<view class="scroll-view-item_H" v-for="(tab,index) in tabBars" :key="tab.id" :id="tab.id"
 				:class="navIndex==index ? 'activite' : ''" @click="checkIndex(index)">{{tab.name}}</view>
 		</scroll-view>
@@ -27,7 +27,7 @@
 					</view>
 				</view>
 				<view v-else style="flex: 1; width: 100%;">
-					<view class="poet-card" style="opacity: 0.9;">
+					<view class="poet-card">
 						<view style="text-align: center; opacity: 0.8">示例</view>
 						<view class="imgContainer">
 							<image src="../../static/initialImgs/1.jpg"></image>
@@ -58,10 +58,12 @@
 					<button class="upload-button" @click="chooseImage">选择图片</button>
 				</view>
 			</view>
-
+			
 			<!-- 图配诗结果展示 -->
-			<view class="poem-card">
-				<image :src="tempPath" mode="widthFix"></image>
+			<view v-if="tempPath" class="poem-card">
+				<view class="imgContainer">
+					<image :src="tempPath"></image>
+				</view>
 				<view>
 					<view class="poem-container" v-for="(info,index) in poetrySwiper" :key='index'>
 						<view class="poem-head">
@@ -120,22 +122,32 @@
 						id: 'sketch-poem'
 					}
 				],
-				inputText: '春眠不觉晓，处处闻啼鸟', // 用户输入的诗句
+				inputText: '', // 用户输入的诗句
 				isColumn: false, // 控制列布局
 				poetrySwiper: [], // 图配诗返回的数据
 				tempPath: '' // 临时图片路径
 			};
 		},
 		mounted() {
-			this.showExampleData();
+			this.setDefaultImageForPoetry();
 		},
 		methods: {
-			showExampleData() {
-				this.imageUrl = this.exampleImageUrl;
-				const midpoint = Math.ceil(this.inputText.length / 2);
-				this.leftColumnText = this.inputText.substring(0, midpoint);
-				this.rightColumnText = this.inputText.substring(midpoint);
+			setDefaultImageForPoetry() {
+			        this.tempPath = '/static/initialImgs/default.png'; 
+			
+			        uni.uploadFile({
+			            url: 'http://www.poetryworld.cn:8198/api/v1/img2txt',
+			            filePath: this.tempPath,
+			            name: 'file',
+			            formData: {
+			                'user': 'test'
+			            },
+			            success: (uploadFileRes) => {
+			                this.poetrySwiper = JSON.parse(uploadFileRes.data).poems;
+			            }
+			        });
 			},
+				
 			// 切换tab
 			checkIndex(index) {
 				this.navIndex = index;
@@ -226,19 +238,25 @@
 	}
 
 	.scroll-view-item_H:first-child {
-		margin-left: 37.5%;
+		margin-left: 20%;
 		margin-right: 5%;
+	}
+	.scroll-view-item_H:nth-child(2) {
+	    margin-left: 8%;
+		margin-right: 10%;
 	}
 
 	/* 诗配图卡片 */
 	.poet-card {
 		margin: 20px auto;
 		padding-top: 20px;
-		width: 80%;
+		width: 75%;
 		background-color: #fff;
 		padding-bottom: 20px;
-		border: 1.5px solid grey;
-		border-left: 4px solid #B9B177;
+		border-left: 2px  #B9B177;
+		border-radius: 10px;
+		opacity: 0.9;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 	}
 
 	.AIPoem {
@@ -250,19 +268,20 @@
 	}
 
 	.imgContainer {
+		margin: 0 auto;
 		width: 300px;
 		height: 200px;
 		overflow: hidden;
 		position: relative;
 	}
-
 	.imgContainer img {
+		opacity: 0.8;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
 	}
-
+	
 	.logoContainer {
 		width: 100%;
 		display: flex;
@@ -292,13 +311,13 @@
 	.upload-button {
 		width: 100%;
 		font-size: 16px;
-		background-color: #0a9a8d;
+		background-color: #babaab;
 		color: #fff;
 		font-weight: 700;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 	}
 
 	.poem-card {
-		padding: 10px;
 		flex: 1; width: 100%;
 	}
 
@@ -318,9 +337,9 @@
 
 	.poem-logo {
 		width: 40px;
-		height: 38px;
+		height: 32px;
 		border-radius: 6px;
-		background-color: #0a9a8d;
+		background-color: #c4bc7d;
 		text-align: center;
 		font-size: 25px;
 		color: #fff;
@@ -338,6 +357,6 @@
 		margin-left: 11%;
 		padding: 10px;
 		border: 1.5px solid grey;
-		border-left: 4px solid #0a9a8d;
+		border-left: 4px solid #c4bc7d;
 	}
 </style>

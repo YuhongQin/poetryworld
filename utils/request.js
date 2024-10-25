@@ -5,11 +5,12 @@ export function request(config = {}) {
         url,  
         data = {},  
         method = "POST",  
-        header = {}  
+        header = {
+		}  
     } = config;  
-
+	console.log(data.get('file'))
     url = packApiUrl(url);  
-
+	console.log(url)
     return new Promise((resolve, reject) => {  
         uni.request({  
             url,  
