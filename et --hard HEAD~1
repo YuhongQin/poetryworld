@@ -1,0 +1,98 @@
+[33mcommit 19f72cef283704a8c48f0c4ef3b96b34eee649c3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Sat Oct 26 16:07:16 2024 +0800
+
+    packv1
+
+[33mcommit a837ddaeb915cbb429da7f02c5ca27acc34f3048[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Fri Oct 25 21:20:38 2024 +0800
+
+    sketch2poem ok
+
+[33mcommit 621daf0f6bb721ebe696d0387aeec4e318cb7e0f[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Fri Oct 25 17:14:21 2024 +0800
+
+    sketch2poem to be fixed
+
+[33mcommit c68dc24c53d63abac083aeb99b2456d855207403[m
+Merge: 9326b3e 9e87601
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Fri Oct 25 10:30:26 2024 +0800
+
+    merge cf mixed
+
+[33mcommit 9326b3e5670eebbc28e3fb241bf0ab52f830e860[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Fri Oct 25 10:27:19 2024 +0800
+
+    图配诗v2
+
+[33mcommit 9e876011fe45abb9b8a715bf083c1b2085d8055f[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Thu Oct 24 22:41:58 2024 +0800
+
+    aadd more pages
+
+[33mcommit db0f7eb76bcf727d543c49ab4232b0aa27bacd55[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Thu Oct 24 21:31:02 2024 +0800
+
+    sketch2poem
+
+[33mcommit c8725bf9b7331875d55112af5afaf522faef2eee[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Thu Oct 24 18:00:22 2024 +0800
+
+    诗配图v1
+
+[33mcommit 7568ec17685dc092364d2e1413a4ba9a501c8152[m
+Merge: 712c432 d1cafd9
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Wed Oct 23 00:42:12 2024 +0800
+
+    Merge branch 'master' of https://github.com/YuhongQin/poetryworld
+
+[33mcommit 712c4322cbc454000ba0b49da7b672b63bd7b964[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Wed Oct 23 00:42:00 2024 +0800
+
+    Poet.vue modified v2
+
+[33mcommit d1cafd956911896465e46fde0980ca6f5de9c3da[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Wed Oct 23 00:01:22 2024 +0800
+
+    add translate
+
+[33mcommit 4a400627e6c28df9582981f7dbc7fefac86e09fa[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Tue Oct 22 22:48:51 2024 +0800
+
+    Poet.vue修改v1
+
+[33mcommit 238938d981677555d4e7e072583c36538fcbf8d6[m
+Merge: 7d8554c c4ea5a1
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Tue Oct 22 14:42:04 2024 +0800
+
+    first merged
+
+[33mcommit 7d8554c4c9db0c2d7d75b550fdb69bbcf1b5ff67[m
+Author: Patrickpwq <113767134+Patrickpwq@users.noreply.github.com>
+Date:   Tue Oct 22 14:38:43 2024 +0800
+
+    css style first modified
+
+[33mcommit c4ea5a135c573d073292338d69d10056cb564b18[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Tue Oct 22 14:32:30 2024 +0800
+
+    完成知识图谱页面
+
+[33mcommit c2754cfc61f0aa45a78c9fee6794be9d9ae464d9[m
+Author: Yuhong Qin <1427697406@qq.com>
+Date:   Mon Oct 21 23:00:06 2024 +0800
+
+    first commit
